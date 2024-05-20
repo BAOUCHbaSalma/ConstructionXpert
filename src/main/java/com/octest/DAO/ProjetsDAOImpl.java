@@ -78,7 +78,16 @@ public class ProjetsDAOImpl implements ProjetsDAO{
     }
 
     @Override
-    public void UpdateProjet(Integer idProjet, Projets projet) {
+    public void UpdateProjet(Integer idProjet, Projets Projet) throws SQLException, ClassNotFoundException {
+        String sqls = "UPDATE projet SET nomProjet=?,descriptionProjet=?, dateDebutProjet=?,dateFinProjet=?,Budget=? WHERE idProjet=?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sqls);
+        s.setString(1,Projet.getNomProjet() );
+        s.setString(2,Projet.getDescriptionProjet() );
+        s.setDate(3,Projet.getDateDebutP());
+        s.setDate(4,Projet.getDateFinP() );
+        s.setInt(5,Projet.getBudgetProjet());
+        s.setInt(6,idProjet);
+        s.executeUpdate();
 
     }
 }

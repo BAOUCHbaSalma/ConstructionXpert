@@ -10,14 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16116516-90a5-4c15-a3c2-374ce8f79146" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UpdateProjets.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/ProjetsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/ProjetsDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/ProjetsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/ProjetsDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DeleteProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DeleteProjet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateProjet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddProjets.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddProjets.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +168,7 @@
       <updated>1716138204730</updated>
       <workItem from="1716138205777" duration="6621000" />
       <workItem from="1716210170915" duration="6060000" />
-      <workItem from="1716219059664" duration="6776000" />
+      <workItem from="1716219059664" duration="7672000" />
     </task>
     <servers />
   </component>
@@ -181,5 +177,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateProjet.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
