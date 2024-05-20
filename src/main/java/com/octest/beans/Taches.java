@@ -19,6 +19,15 @@ public class Taches {
         this.dateFinTache = dateFinTache;
         this.statutTache = statutTache;
         this.idProjet = idProjet;
+
+    }
+
+    public Taches(String description, Date dateDebutTache, Date dateFinTache, String statutTache, Integer idProjet) {
+        this.description = description;
+        this.dateDebutTache = dateDebutTache;
+        this.dateFinTache = dateFinTache;
+        this.statutTache = statutTache;
+        this.idProjet = idProjet;
     }
 
     public Integer getIdTache() {
