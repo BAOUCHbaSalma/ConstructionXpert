@@ -26,10 +26,10 @@
   <h4>${Tache.getStatutTache()}</h4>
   <h4>${Tache.getIdProjet()}</h4>
 
-  <a href="update?id=${Tache.getIdTache()}">modifier</a>
-  <a href="DeleteProjet?id=${Tache.getIdTache()}">supprimer</a>
-  <a href="ShowTaches?id=${Tache.getIdTache()}">Show Ressources</a>
-  <a href="AddTache?id=${Tache.getIdTache()}">Add Ressources</a>
+  <a href="update?id=${Tache.getIdTache()}">Update</a>
+  <a href="DeleteTache?id=${Tache.getIdTache()}">Delete</a>
+  <a href="ShowRessource?id=${Tache.getIdTache()}">Show Ressources</a>
+  <a href="ShowRessource?id=${Tache.getIdTache()}">Add Ressources</a>
 
 </c:forEach>
 
