@@ -1,15 +1,27 @@
 package com.octest.servlets;
 
+import com.octest.DAO.ProjetsDAOImpl;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name = "UpdateProjet", value = "/UpdateProjet")
 public class UpdateProjet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        ProjetsDAOImpl rr=new ProjetsDAOImpl();
+        Integer id=Integer.valueOf(request.getParameter("id"));
+        try {
+            request.setAttribute("Projet",rr.RecupererProjet(id));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        this.getServletContext().getRequestDispatcher("/WEB-INF/UpdateProjets.jsp").forward(request, response);
     }
 
     @Override

@@ -46,13 +46,35 @@ public class ProjetsDAOImpl implements ProjetsDAO{
     }
 
     @Override
-    public void DeleteProjet(Integer idProjet) {
+    public void DeleteProjet(Integer idProjet) throws SQLException, ClassNotFoundException {
+        String sql = "DELETE FROM projet WHERE idProjet = ?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sql);
+        s.setInt(1,idProjet);
+        s.executeUpdate();
+
 
     }
 
     @Override
-    public Projets RecupererProjet(Integer idProjet) {
-        return null;
+    public Projets RecupererProjet(Integer idProjet) throws SQLException, ClassNotFoundException {
+
+        String requet = "SELECT * FROM  projet WHERE idProjet=?";
+        PreparedStatement statement = ConnectionDAO.getConnection().prepareStatement(requet);
+        statement.setInt(1, idProjet);
+        ResultSet resultat = statement.executeQuery();
+        Projets pr = null;
+        while (resultat.next()) {
+            Integer idProjett = resultat.getInt("idProjet");
+            String nomProjet = resultat.getString("nomProjet");
+            String descriptionProjet = resultat.getString("descriptionProjet");
+            Date dateDebutProjet= resultat.getDate("dateDebutProjet");
+            Date dateFinProjet = resultat.getDate("dateFinProjet");
+            Integer Budget = resultat.getInt("Budget");
+            pr = new Projets(idProjett, nomProjet,descriptionProjet,dateDebutProjet, dateFinProjet,Budget);
+
+
+        }
+        return pr;
     }
 
     @Override

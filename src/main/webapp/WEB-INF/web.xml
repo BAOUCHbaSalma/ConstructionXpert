@@ -20,4 +20,16 @@
         <servlet-name>AddProjet</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateProjet</servlet-name>
+        <servlet-class>com.octest.servlets.UpdateProjet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateProjet</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+
+
 </web-app>

@@ -115,13 +115,16 @@
                         <h4>${Projet.getDateDebutP()}</h4>
                         <h4>${Projet.getDateFinP()}</h4>
                         <h4>${Projet.getBudgetProjet()}</h4>
-            <a href="UpdateProjet?id=${Projet.getIdProjet()}">modifier</a>
+            <a href="update?id=${Projet.getIdProjet()}">modifier</a>
             <a href="DeleteProjet?id=${Projet.getIdProjet()}">supprimer</a>
 
         </c:forEach>
 
 
 </div>
+
+
+
 
 </body>
 </html>
