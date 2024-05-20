@@ -24,13 +24,6 @@ public class AddProjet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        String NameProjet=request.getParameter("itemName");
-        Integer itemBudget=Integer.valueOf(request.getParameter("itemBudget"));
-        Date itemDateDebut=Date.valueOf(request.getParameter("itemDateDebut"));
-        Date itemDateFin=Date.valueOf(request.getParameter("itemDateFin"));
-        String itemDescription=request.getParameter("itemDescription");
-        Projets projet=new Projets(NameProjet,itemDescription,itemDateDebut,itemDateFin,itemBudget);
-        pr.AddProjet(projet);
 
 
 
@@ -40,6 +33,21 @@ public class AddProjet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ProjetsDAOImpl pr=new ProjetsDAOImpl();
+        String NameProjet=request.getParameter("itemName");
+        Integer itemBudget=Integer.valueOf(request.getParameter("itemBudget"));
+        Date itemDateDebut=Date.valueOf(request.getParameter("itemDateDebut"));
+        Date itemDateFin=Date.valueOf(request.getParameter("itemDateFin"));
+        String itemDescription=request.getParameter("itemDescription");
+        Projets projet=new Projets(NameProjet,itemDescription,itemDateDebut,itemDateFin,itemBudget);
+        try {
+            pr.AddProjet(projet);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        this.getServletContext().getRequestDispatcher("/WEB-INF/AddProjets.jsp").forward(request, response);
 
     }
 }

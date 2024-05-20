@@ -1,5 +1,5 @@
 
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,8 +94,7 @@
     <div class="popup-content">
         <span class="close" onclick="closePopup()">&times;</span>
         <h5>Ajouter Projet</h5>
-        <form>
-
+        <form action="add" method="post">
             <input type="text" name="itemName" placeholder="Entrer name">
             <input type="Date" name="itemDateDebut" placeholder="Entrer Date Debut">
             <input type="Date" name="itemDateFin" placeholder="Entrer Date Fin">
@@ -107,7 +106,22 @@
     </div>
 </div>
 
+<div>
+        <c:forEach var="Projet" items="${Projets}">
 
+                    <h2>Projet N°: ${Projet.getIdProjet()}</h2>
+                        <h2> ${Projet.getNomProjet()}</h2>
+                        <h3>${Projet.getDescriptionProjet()}</h3>
+                        <h4>${Projet.getDateDebutP()}</h4>
+                        <h4>${Projet.getDateFinP()}</h4>
+                        <h4>${Projet.getBudgetProjet()}</h4>
+            <a href="UpdateProjet?id=${Projet.getIdProjet()}">modifier</a>
+            <a href="DeleteProjet?id=${Projet.getIdProjet()}">supprimer</a>
+
+        </c:forEach>
+
+
+</div>
 
 </body>
 </html>

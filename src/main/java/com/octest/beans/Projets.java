@@ -1,6 +1,7 @@
 package com.octest.beans;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 public class Projets {
    private Integer idProjet;
@@ -51,7 +52,7 @@ public class Projets {
         this.descriptionProjet = descriptionProjet;
     }
 
-    public java.sql.Date getDateDebutP() {
+    public Date getDateDebutP() {
         return dateDebutP;
     }
 

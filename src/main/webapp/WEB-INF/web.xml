@@ -5,11 +5,19 @@
          version="4.0">
 
     <servlet>
+        <servlet-name>Acceuil</servlet-name>
+        <servlet-class>com.octest.servlets.Acceuil</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Acceuil</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>AddProjet</servlet-name>
         <servlet-class>com.octest.servlets.AddProjet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddProjet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/add</url-pattern>
     </servlet-mapping>
 </web-app>
