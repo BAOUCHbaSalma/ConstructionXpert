@@ -1,7 +1,8 @@
 package com.octest.beans;
 
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class Taches {
     private Integer idTache;

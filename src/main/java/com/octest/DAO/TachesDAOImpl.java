@@ -12,10 +12,11 @@ import java.util.ArrayList;
 
 public class TachesDAOImpl implements TachesDAO{
     @Override
-    public ArrayList<Taches> ShowTaches() throws SQLException, ClassNotFoundException {
+    public ArrayList<Taches> ShowTaches(Integer idProjet) throws SQLException, ClassNotFoundException {
         ArrayList<Taches> taches=new ArrayList<>();
-        String sql="SELECT * FROM tache";
+        String sql="SELECT * FROM tache WHERE idProjet=?";
         PreparedStatement statement = ConnectionDAO.getConnection().prepareStatement(sql);
+        statement.setInt(1,idProjet);
         ResultSet resultat = statement.executeQuery();
 
         while (resultat.next()) {
@@ -24,7 +25,6 @@ public class TachesDAOImpl implements TachesDAO{
             Date dateDebutTache = resultat.getDate("dateDebutTache");
             Date dateFinTache = resultat.getDate("dateFinTache");
             String statutTache = resultat.getString("statutTache");
-            Integer idProjet = resultat.getInt("idProjet");
             Taches th=new Taches(idTache,descriptionTache,dateDebutTache,dateFinTache,statutTache,idProjet);
             taches.add(th);
 
@@ -35,6 +35,14 @@ public class TachesDAOImpl implements TachesDAO{
 
     @Override
     public void AddTaches(Taches Tache) throws SQLException, ClassNotFoundException {
+        String sql = "INSERT INTO tache (descriptionTache, dateDebutTache,dateFinTache,statutTache,idProjet) VALUES (?,?,?,?,?)";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sql);
+        s.setString(1,Tache.getDescription() );
+        s.setDate(2,Tache.getDateDebutTache());
+        s.setDate(3,Tache.getDateFinTache());
+        s.setString(4, Tache.getStatutTache());
+        s.setInt(5,Tache.getIdProjet());
+        s.executeUpdate();
 
     }
 

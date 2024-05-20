@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: selma
-  Date: 20/05/2024
-  Time: 23:25
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,9 +12,26 @@
   <input type="Date" name="DateDebutTache" placeholder="Entrer Date Debut">
   <input type="Date" name="DateFinTache" placeholder="Entrer Date Fin">
   <input type="text" name="StatutTache" placeholder="Entrer statut">
+  <input type="hidden" name="id" value="${idProjet}">
   <button type="submit">Ajouter</button>
 
 </form>
+
+<c:forEach var="Tache" items="${Tache}">
+
+  <h2>Projet N°: ${Tache.getIdTache()}</h2>
+  <h2> ${Tache.getDescription()}</h2>
+  <h3>${Tache.getDateDebutTache()}</h3>
+  <h4>${Tache.getDateFinTache()}</h4>
+  <h4>${Tache.getStatutTache()}</h4>
+  <h4>${Tache.getIdProjet()}</h4>
+
+  <a href="update?id=${Tache.getIdTache()}">modifier</a>
+  <a href="DeleteProjet?id=${Tache.getIdTache()}">supprimer</a>
+  <a href="ShowTaches?id=${Tache.getIdTache()}">Show Ressources</a>
+  <a href="AddTache?id=${Tache.getIdTache()}">Add Ressources</a>
+
+</c:forEach>
 
 </body>
 </html>

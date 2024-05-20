@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface TachesDAO {
-    ArrayList<Taches> ShowTaches() throws SQLException, ClassNotFoundException;
+    ArrayList<Taches> ShowTaches(Integer idProjet) throws SQLException, ClassNotFoundException;
     void AddTaches(Taches Tache) throws SQLException, ClassNotFoundException;
     void DeleteTaches(Integer idTache) throws SQLException, ClassNotFoundException;
     Taches RecupererTache(Integer idTache) throws SQLException, ClassNotFoundException;

@@ -15,7 +15,15 @@ public class ShowTaches extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer id=Integer.valueOf(request.getParameter("id"));
-
+        request.setAttribute("idProjet",id);
+        TachesDAOImpl ta=new TachesDAOImpl();
+        try {
+            request.setAttribute("Tache",ta.ShowTaches(id));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         this.getServletContext().getRequestDispatcher("/WEB-INF/ShowAddTaches.jsp").forward(request, response);
 
     }

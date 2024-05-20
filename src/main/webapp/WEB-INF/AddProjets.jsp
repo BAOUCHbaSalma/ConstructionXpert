@@ -118,7 +118,7 @@
             <a href="update?id=${Projet.getIdProjet()}">modifier</a>
             <a href="DeleteProjet?id=${Projet.getIdProjet()}">supprimer</a>
             <a href="ShowTaches?id=${Projet.getIdProjet()}">Show Taches</a>
-            <a href="AddTache?id=${Projet.getIdProjet()}">Add Taches</a>
+            <a href="ShowTaches?id=${Projet.getIdProjet()}">Add Taches</a>
 
         </c:forEach>
 
