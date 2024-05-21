@@ -1,6 +1,7 @@
 package com.octest.servlets;
 
 import com.octest.DAO.RessourcesDAOImpl;
+import com.octest.beans.Ressources;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -27,6 +28,22 @@ public class UpdateRessourceTache extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Integer idRessource=Integer.valueOf(request.getParameter("idRessource"));
+        String nomRessource=request.getParameter("nomRessource");
+        String typeRessource=request.getParameter("typeRessource");
+        Integer quantiteRessource=Integer.valueOf(request.getParameter("quantiteRessource"));
+        String infoFournisseur=request.getParameter("infoFournisseur");
+        Integer idTache=Integer.valueOf(request.getParameter("idTache"));
+        Ressources rc=new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,idTache);
+        RessourcesDAOImpl re=new RessourcesDAOImpl();
+        try {
+            re.UpdateRessource(idRessource,rc);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        this.getServletContext().getRequestDispatcher("/WEB-INF/ShowAddTaches.jsp").forward(request, response);
 
     }
 }

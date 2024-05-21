@@ -68,7 +68,16 @@ public class RessourcesDAOImpl implements RessourcesDAO{
     }
 
     @Override
-    public void UpdateProjet(Integer idProjet, Projets Projet) throws SQLException, ClassNotFoundException {
+    public void UpdateRessource(Integer idRessource, Ressources Ressource) throws SQLException, ClassNotFoundException {
+        String sqls = "UPDATE ressource SET nomRessource=?,typeRessource=?, quantiteRessource=?,infoFournisseur=?,idTache=? WHERE idRessource=?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sqls);
+        s.setString(1,Ressource.getNomRessource());
+        s.setString(2,Ressource.getTypeRessource());
+        s.setInt(3,Ressource.getQuantiteRoussource());
+        s.setString(4,Ressource.getInfoFournisseur());
+        s.setInt(5,Ressource.getIdTache());
+        s.setInt(6,idRessource);
+        s.executeUpdate();
 
     }
 }

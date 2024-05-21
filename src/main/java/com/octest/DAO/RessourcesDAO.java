@@ -11,6 +11,6 @@ public interface RessourcesDAO {
     void AddRessources(Projets Projet) throws SQLException, ClassNotFoundException;
     void DeleteRessource(Integer idRessource) throws SQLException, ClassNotFoundException;
     Ressources RecupererRessource(Integer idRessource) throws SQLException, ClassNotFoundException;
-    void UpdateProjet(Integer idProjet, Projets Projet) throws SQLException, ClassNotFoundException;
+    void UpdateRessource(Integer idRessource, Ressources Ressource) throws SQLException, ClassNotFoundException;
 }
 
