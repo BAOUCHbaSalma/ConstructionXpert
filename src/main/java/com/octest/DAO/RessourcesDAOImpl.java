@@ -35,6 +35,26 @@ public class RessourcesDAOImpl implements RessourcesDAO{
     }
 
     @Override
+    public ArrayList<Ressources> ShowRessources() throws SQLException, ClassNotFoundException {
+        ArrayList<Ressources> ressources=new ArrayList<>();
+        String sql="SELECT * FROM ressource ";
+        PreparedStatement statement = ConnectionDAO.getConnection().prepareStatement(sql);
+        ResultSet resultat = statement.executeQuery();
+        while (resultat.next()) {
+            Integer idRessource=resultat.getInt("idRessource");
+            String nomRessource=resultat.getString("nomRessource");
+            String typeRessource = resultat.getString("typeRessource");
+            Integer quantiteRessource = resultat.getInt("quantiteRessource");
+            String infoFournisseur = resultat.getString("infoFournisseur");
+            Ressources rs=new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,idTache);
+            ressources.add(rs);
+
+
+        }
+        return ressources;
+    }
+
+    @Override
     public void AddRessources(Projets Projet) throws SQLException, ClassNotFoundException {
 
     }
@@ -77,6 +97,16 @@ public class RessourcesDAOImpl implements RessourcesDAO{
         s.setString(4,Ressource.getInfoFournisseur());
         s.setInt(5,Ressource.getIdTache());
         s.setInt(6,idRessource);
+        s.executeUpdate();
+
+    }
+
+    @Override
+    public void AssocierRessource(Integer idRessource, Integer idTache) throws SQLException, ClassNotFoundException {
+        String sqls = "UPDATE ressource SET idTache=? WHERE idRessource=?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sqls);
+        s.setInt(1,idTache);
+        s.setInt(2,idRessource);
         s.executeUpdate();
 
     }
