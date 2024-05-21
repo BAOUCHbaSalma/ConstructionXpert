@@ -27,7 +27,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>UpdateProjet</servlet-name>
-        <url-pattern>/update</url-pattern>
+        <url-pattern>/updatep</url-pattern>
     </servlet-mapping>
 
 

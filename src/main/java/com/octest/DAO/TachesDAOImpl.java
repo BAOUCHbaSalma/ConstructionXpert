@@ -57,7 +57,21 @@ public class TachesDAOImpl implements TachesDAO{
 
     @Override
     public Taches RecupererTache(Integer idTache) throws SQLException, ClassNotFoundException {
-        return null;
+        String requet = "SELECT * FROM  tache WHERE idTache=?";
+        PreparedStatement statement = ConnectionDAO.getConnection().prepareStatement(requet);
+        statement.setInt(1, idTache);
+        ResultSet resultat = statement.executeQuery();
+        Taches th= null;
+        while (resultat.next()) {
+            String descriptionTache = resultat.getString("descriptionTache");
+            Date dateDebutTache= resultat.getDate("dateDebutTache");
+            Date dateFinTache = resultat.getDate("dateFinTache");
+            String statutTache = resultat.getString("statutTache");
+            Integer idProjet = resultat.getInt("idProjet");
+            th = new Taches(idTache,descriptionTache,dateDebutTache,dateFinTache,statutTache,idProjet);
+
+        }
+        return th;
     }
 
     @Override
