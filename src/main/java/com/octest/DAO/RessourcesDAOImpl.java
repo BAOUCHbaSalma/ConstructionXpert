@@ -40,7 +40,11 @@ public class RessourcesDAOImpl implements RessourcesDAO{
     }
 
     @Override
-    public void DeleteProjet(Integer idProjet) throws SQLException, ClassNotFoundException {
+    public void DeleteRessource(Integer idRessource) throws SQLException, ClassNotFoundException {
+        String sql = "DELETE FROM ressource WHERE idRessource = ?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sql);
+        s.setInt(1,idRessource);
+        s.executeUpdate();
 
     }
 

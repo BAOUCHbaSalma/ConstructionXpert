@@ -17,7 +17,7 @@
     <h4>${Ressources.getIdTache()}</h4>
 
     <a href="UpdateTache?id=${Ressources.getIdRessource()}">Update</a>
-    <a href="DeleteTache?id=${Ressources.getIdRessource()}">Delete</a>
+    <a href="DeleteRessource?id=${Ressources.getIdRessource()}">Delete</a>
 
 
 </c:forEach>
