@@ -8,6 +8,14 @@ private Integer quantiteRoussource;
 private String infoFournisseur;
 private Integer idTache;
 
+    public Ressources(Integer idRessource, String nomRessource, String typeRessource, Integer quantiteRoussource, String infoFournisseur) {
+        this.idRessource = idRessource;
+        this.nomRessource = nomRessource;
+        this.typeRessource = typeRessource;
+        this.quantiteRoussource = quantiteRoussource;
+        this.infoFournisseur = infoFournisseur;
+    }
+
     public Ressources(Integer idRessource, String nomRessource, String typeRessource, Integer quantiteRoussource, String infoFournisseur, Integer idTache) {
         this.idRessource = idRessource;
         this.nomRessource = nomRessource;

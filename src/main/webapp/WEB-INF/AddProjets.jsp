@@ -1,4 +1,3 @@
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -6,127 +5,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style><%@include file="styleee.css"%></style>
-
+    <title>Gestion des Projets</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<header>
-    <ul class="linknav">
-        <li>Acceuil</li>
-        <li>About us</li>
-        <li>Projets</li>
-        <li>Commentaires</li>
-
-    </ul>
-</header>
-<section class="general">
-    <div class="left">
-        <div class="table">
-            <h3 >Vos Tableaux</h3>
-            <h4 onclick="showPopup('add')">+</h4>
+<div class="container mt-5">
+    <h5>Ajouter Projet</h5>
+    <form action="add" method="post" class="mb-4">
+        <div class="form-group">
+            <label for="itemName">Nom du projet</label>
+            <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
         </div>
-        <div class="projects">
-            <div class="nomProjet">
-                <h5>Construction Hotel</h5>
-            </div>
-
-            <div class="menu">
-                <span class="dots" onclick="toggleMenu()">⋮</span>
-                <div class="menu-options" id="menuOptions">
-                    <div class="option" onclick="alert('Modifier option selected')">Modifier</div>
-                    <div class="option" onclick="alert('Supprimer option selected')">Supprimer</div>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="itemDateDebut">Date de début</label>
+            <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
         </div>
-        <div class="projects">
-            <div class="nomProjet">
-                <h5>Construction Hotel</h5>
-            </div>
-
-            <div class="menu">
-                <span class="dots" onclick="toggleMenu()">⋮</span>
-                <div class="menu-options" id="menuOptions">
-                    <div class="option" onclick="showPopup('add')">Ajouter</div>
-                    <div class="option" onclick="alert('Modifier option selected')">Modifier</div>
-                    <div class="option" onclick="alert('Supprimer option selected')">Supprimer</div>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="itemDateFin">Date de fin</label>
+            <input type="date" class="form-control" id="itemDateFin" name="itemDateFin">
         </div>
-        <div class="projects">
-            <h5>Construction Hotel</h5>
-            <div class="menu">
-                <span class="dots" onclick="toggleMenu()">⋮</span>
-                <div class="menu-options" id="menuOptions">
-                    <div class="option" onclick="alert('Modifier option selected')">Modifier</div>
-                    <div class="option" onclick="alert('Supprimer option selected')">Supprimer</div>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="itemBudget">Budget</label>
+            <input type="number" class="form-control" id="itemBudget" name="itemBudget" placeholder="Entrer budget">
         </div>
-
-    </div>
-    <div class="right">
-
-        <div class="image-section">
-            <img src="https://i.ibb.co/swD1Dc9/ivan-bandura-b-Nm-VYEd5-VJI-unsplash.jpg" alt="Construction Hotel">
+        <div class="form-group">
+            <label for="itemDescription">Description</label>
+            <textarea class="form-control" id="itemDescription" name="itemDescription" placeholder="Entrer description"></textarea>
         </div>
-        <div class="content-section">
-
-            <p>
-                Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum
-            </p>
-            <div class="grid">
-                <div class="grid-item"><span>1</span> LOREM</div>
-                <div class="grid-item"><span>1</span> LOREM</div>
-                <div class="grid-item"><span>1</span> LOREM</div>
-                <div class="grid-item"><span>1</span> LOREM</div>
-                <div class="grid-item"><span>1</span> LOREM</div>
-                <div class="grid-item"><span>1</span> LOREM</div>
-                <div class="grid-item"><span>1</span> LOREM</div>
-                <div class="grid-item"><span>1</span> LOREM</div>
-            </div>
-        </div>
-
-
-    </div>
-</section>
-<div class="popup" id="popupForm">
-    <div class="popup-content">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <h5>Ajouter Projet</h5>
-        <form action="add" method="post">
-            <input type="text" name="itemName" placeholder="Entrer name">
-            <input type="Date" name="itemDateDebut" placeholder="Entrer Date Debut">
-            <input type="Date" name="itemDateFin" placeholder="Entrer Date Fin">
-            <input type="Number" name="itemBudget" placeholder="Entrer Budget">
-            <textarea  name="itemDescription" placeholder="Entrer Description"></textarea>
-            <button type="submit">Ajouter</button>
-
-        </form>
-    </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
 </div>
 
-<div>
-        <c:forEach var="Projet" items="${Projets}">
-
-                    <h2>Projet N°: ${Projet.getIdProjet()}</h2>
-                        <h2> ${Projet.getNomProjet()}</h2>
-                        <h3>${Projet.getDescriptionProjet()}</h3>
-                        <h4>${Projet.getDateDebutP()}</h4>
-                        <h4>${Projet.getDateFinP()}</h4>
-                        <h4>${Projet.getBudgetProjet()}</h4>
-            <a href="update?id=${Projet.getIdProjet()}">modifier</a>
-            <a href="DeleteProjet?id=${Projet.getIdProjet()}">supprimer</a>
-            <a href="ShowTaches?id=${Projet.getIdProjet()}">Show Taches</a>
-            <a href="ShowTaches?id=${Projet.getIdProjet()}">Add Taches</a>
-
-        </c:forEach>
-
-
+<div class="container">
+    <c:forEach var="Projet" items="${Projets}">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Projet N°: ${Projet.getIdProjet()}</h5>
+                <h5 class="card-title">${Projet.getNomProjet()}</h5>
+                <p class="card-text">${Projet.getDescriptionProjet()}</p>
+                <p class="card-text"><small class="text-muted">Date de début: ${Projet.getDateDebutP()}</small></p>
+                <p class="card-text"><small class="text-muted">Date de fin: ${Projet.getDateFinP()}</small></p>
+                <p class="card-text"><small class="text-muted">Budget: ${Projet.getBudgetProjet()}</small></p>
+                <a href="updatep?id=${Projet.getIdProjet()}" class="btn btn-warning">Modifier</a>
+                <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="btn btn-danger">Supprimer</a>
+                <a href="ShowTaches?id=${Projet.getIdProjet()}" class="btn btn-info">Voir Tâches</a>
+                <a href="ShowTaches?id=${Projet.getIdProjet()}" class="btn btn-success">Ajouter Tâche</a>
+            </div>
+        </div>
+    </c:forEach>
 </div>
 
 
-
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

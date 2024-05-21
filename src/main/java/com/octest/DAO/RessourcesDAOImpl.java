@@ -46,7 +46,7 @@ public class RessourcesDAOImpl implements RessourcesDAO{
             String typeRessource = resultat.getString("typeRessource");
             Integer quantiteRessource = resultat.getInt("quantiteRessource");
             String infoFournisseur = resultat.getString("infoFournisseur");
-            Ressources rs=new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,idTache);
+            Ressources rs=new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur);
             ressources.add(rs);
 
 
