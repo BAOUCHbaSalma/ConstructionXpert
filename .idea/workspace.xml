@@ -10,10 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16116516-90a5-4c15-a3c2-374ce8f79146" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowRessourceTache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowRessource.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/TachesDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/TachesDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/beans/Ressources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/beans/Ressources.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateTache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateTache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UpdateTache.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/UpdateTache.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAddTaches.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAddTaches.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
         <option value="Servlet" />
       </list>
     </option>
@@ -170,7 +174,7 @@
       <workItem from="1716210170915" duration="6060000" />
       <workItem from="1716219059664" duration="8845000" />
       <workItem from="1716243351716" duration="4061000" />
-      <workItem from="1716281007864" duration="2895000" />
+      <workItem from="1716281007864" duration="7170000" />
     </task>
     <servers />
   </component>

@@ -28,7 +28,7 @@
 
   <a href="UpdateTache?id=${Tache.getIdTache()}">Update</a>
   <a href="DeleteTache?id=${Tache.getIdTache()}">Delete</a>
-  <a href="ShowRessource?id=${Tache.getIdTache()}">Show Ressources</a>
+  <a href="ShowRessourceTache?id=${Tache.getIdTache()}">Show Ressources</a>
   <a href="ShowRessource?id=${Tache.getIdTache()}">Add Ressources</a>
 
 </c:forEach>

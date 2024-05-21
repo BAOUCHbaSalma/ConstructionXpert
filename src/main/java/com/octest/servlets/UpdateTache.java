@@ -46,6 +46,14 @@ public class UpdateTache extends HttpServlet {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        TachesDAOImpl ta=new TachesDAOImpl();
+        try {
+            request.setAttribute("Tache",ta.ShowTaches(idProjet));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         this.getServletContext().getRequestDispatcher("/WEB-INF/ShowAddTaches.jsp").forward(request, response);
 
     }

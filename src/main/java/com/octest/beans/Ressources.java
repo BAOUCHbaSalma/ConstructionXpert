@@ -4,11 +4,11 @@ public class Ressources {
 private Integer idRessource;
 private String nomRessource;
 private String typeRessource;
-private String quantiteRoussource;
+private Integer quantiteRoussource;
 private String infoFournisseur;
 private Integer idTache;
 
-    public Ressources(Integer idRessource, String nomRessource, String typeRessource, String quantiteRoussource, String infoFournisseur, Integer idTache) {
+    public Ressources(Integer idRessource, String nomRessource, String typeRessource, Integer quantiteRoussource, String infoFournisseur, Integer idTache) {
         this.idRessource = idRessource;
         this.nomRessource = nomRessource;
         this.typeRessource = typeRessource;
@@ -41,11 +41,11 @@ private Integer idTache;
         this.typeRessource = typeRessource;
     }
 
-    public String getQuantiteRoussource() {
+    public Integer getQuantiteRoussource() {
         return quantiteRoussource;
     }
 
-    public void setQuantiteRoussource(String quantiteRoussource) {
+    public void setQuantiteRoussource(Integer quantiteRoussource) {
         this.quantiteRoussource = quantiteRoussource;
     }
 
