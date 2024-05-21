@@ -1,16 +1,20 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: selma
-  Date: 21/05/2024
-  Time: 11:57
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<form action="UpdateRessourceTache" method="post">
+    <input type="hidden" name="idRessource"  value="${Ressource.getIdRessource()}" placeholder="Entrer id">
+    <input type="text" name="nomRessource"  value="${Ressource.getNomRessource()}" placeholder="Entrer Nom Ressource">
+    <input type="text" name="typeRessource" value="${Ressource.getTypeRessource()}" placeholder="Entrer Type Ressource">
+    <input type="number" name="quantiteRoussource"  value="${Ressource.getQuantiteRoussource()}" placeholder="Entrer Quantite Ressource">
+    <input type="text" name="infoFournisseur" value="${Ressource.getInfoFournisseur()}" placeholder="Entrer infoFournisseur">
+    <input type="hidden" name="idTache"  value="${Ressource.getIdTache()}">
+    <button type="submit">Modifier</button>
+
+</form>
+
+</body>
 </html>

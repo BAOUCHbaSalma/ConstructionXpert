@@ -49,8 +49,22 @@ public class RessourcesDAOImpl implements RessourcesDAO{
     }
 
     @Override
-    public Projets RecupererProjet(Integer idProjet) throws SQLException, ClassNotFoundException {
-        return null;
+    public Ressources RecupererRessource(Integer idRessource) throws SQLException, ClassNotFoundException {
+        String requet = "SELECT * FROM  ressource WHERE idRessource=?";
+        PreparedStatement statement = ConnectionDAO.getConnection().prepareStatement(requet);
+        statement.setInt(1, idRessource);
+        ResultSet resultat = statement.executeQuery();
+        Ressources rc= null;
+        while (resultat.next()) {
+            String nomRessource= resultat.getString("nomRessource");
+            String typeRessource = resultat.getString("typeRessource");
+            Integer quantiteRessource = resultat.getInt("quantiteRessource");
+            String infoFournisseur = resultat.getString("infoFournisseur");
+            Integer idTache=resultat.getInt("idTache");
+            rc = new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,idTache);
+
+        }
+        return rc;
     }
 
     @Override

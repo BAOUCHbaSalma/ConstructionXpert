@@ -16,7 +16,7 @@
     <h4>${Ressources.getInfoFournisseur()}</h4>
     <h4>${Ressources.getIdTache()}</h4>
 
-    <a href="UpdateTache?id=${Ressources.getIdRessource()}">Update</a>
+    <a href="UpdateRessourceTache?id=${Ressources.getIdRessource()}">Update</a>
     <a href="DeleteRessource?id=${Ressources.getIdRessource()}">Delete</a>
 
 
