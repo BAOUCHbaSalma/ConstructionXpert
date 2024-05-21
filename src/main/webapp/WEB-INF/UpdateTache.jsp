@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form action="updatep" method="post">
+<form action="UpdateTache" method="post">
     <input type="hidden" name="idTache"  value="${Tache.getIdTache()}" placeholder="Entrer id">
     <input type="text" name="descriptionTache"  value="${Tache.getDescription()}" placeholder="Entrer Description">
     <input type="Date" name="DateDebutTache" value="${Tache.getDateDebutTache()}" placeholder="Entrer Date Debut">

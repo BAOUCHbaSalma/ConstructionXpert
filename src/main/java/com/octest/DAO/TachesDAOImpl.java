@@ -76,6 +76,15 @@ public class TachesDAOImpl implements TachesDAO{
 
     @Override
     public void UpdateTache(Integer idTache, Taches tache) throws SQLException, ClassNotFoundException {
+        String sqls = "UPDATE tache SET descriptionTache=?, dateDebutTache=?,dateFinTache=?,statutTache=?,idProjet=? WHERE idTache=?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sqls);
+        s.setString(1,tache.getDescription());
+        s.setDate(2,tache.getDateDebutTache());
+        s.setDate(3,tache.getDateFinTache());
+        s.setString(4,tache.getStatutTache());
+        s.setInt(5,tache.getIdProjet());
+        s.setInt(6,idTache);
+        s.executeUpdate();
 
     }
 }
