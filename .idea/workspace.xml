@@ -11,6 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="16116516-90a5-4c15-a3c2-374ce8f79146" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/Acceuil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/Acceuil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTaches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTaches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/test.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Acceuil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Acceuil.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +171,7 @@
       <workItem from="1716210170915" duration="6060000" />
       <workItem from="1716219059664" duration="8845000" />
       <workItem from="1716243351716" duration="4061000" />
-      <workItem from="1716281007864" duration="26349000" />
+      <workItem from="1716281007864" duration="35712000" />
     </task>
     <servers />
   </component>
@@ -188,7 +191,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTaches.java</url>
-          <line>32</line>
+          <line>41</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

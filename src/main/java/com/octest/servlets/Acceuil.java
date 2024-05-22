@@ -1,6 +1,7 @@
 package com.octest.servlets;
 
 import com.octest.DAO.ProjetsDAOImpl;
+import com.octest.DAO.TachesDAOImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -20,7 +21,7 @@ public class Acceuil extends HttpServlet {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        this.getServletContext().getRequestDispatcher("/WEB-INF/AddProjets.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/Acceuil.jsp").forward(request, response);
     }
 
     @Override

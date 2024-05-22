@@ -1,4 +1,5 @@
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,6 +13,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        text-decoration: none;
     }
     :root {
         --blue: #2a2185;
@@ -76,6 +78,7 @@
         height: 60px;
         line-height: 75px;
         text-align: center;
+        align-content: center;
     }
 
     .sideBar ul li a .icon ion-icon {
@@ -252,10 +255,9 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-gap: 30px;
-        /* margin-top: 10px; */
     }
 
-    .details .recentOrders {
+    .details .Projets{
         position: relative;
         display: grid;
         min-height: 500px;
@@ -291,28 +293,55 @@
     .details table thead td {
         font-weight: 600;
     }
-    .details .recentOrders table tr {
+    .details .Projets table tr {
         color: var(--black1);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
-    .details .recentOrders table tr:last-child {
+    .details .Projets table tr:last-child {
         border-bottom: none;
     }
-    .details .recentOrders table tbody tr:hover {
+    .details .Projets table tbody tr:hover {
         background: var(--blue);
         color: var(--white);
     }
-    .details .recentOrders table tr td {
-        padding: 10px;
+
+    .details .Projets table tbody tr:hover a{
+        background: var(--blue);
+        color: var(--white);
     }
-    .details .recentOrders table tr td:last-child {
-        text-align: end;
+    .details .Projets table tr td {
+        padding: 7px;
     }
-    .details .recentOrders table tr td:nth-child(2) {
-        text-align: end;
+
+    .details .Projets table tr td a{
+        color: var(--black1);
+
     }
-    .details .recentOrders table tr td:nth-child(3) {
-        text-align: center;
+
+    .details .Projets table tr td:last-child {
+        text-align: start;
+    }
+    .details .Projets table tr td:nth-child(2) {
+        text-align: start;
+    }
+    .details .Projets table tr td:nth-child(3) {
+        text-align: start;
+        width: 15%;
+    }
+    .details .Projets table tr td:nth-child(4) {
+        width: 15%;
+    }
+    .details .Projets table tr td:nth-child(5) {
+        width: 15%;
+    }
+    .details table{
+        width: 100%;
+    }
+    .details table thead{
+        width: 100%;
+    }
+    .details table tbody{
+        width: 100%;
     }
     .Terminee{
         padding: 2px 4px;
@@ -347,6 +376,50 @@
         font-weight: 500;
     }
 
+
+    .Taches {
+        position: relative;
+        display: grid;
+        min-height: 500px;
+        padding: 20px;
+        background: var(--white);
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+    }
+    .Taches .imgBx {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        overflow: hidden;
+    }
+    .Taches .imgBx img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .Taches table tr td {
+        padding: 12px 10px;
+    }
+    .Taches table tr td h4 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.2rem;
+    }
+    .Taches table tr td h4 span {
+        font-size: 14px;
+        color: var(--black2);
+    }
+    .Taches table tr:hover {
+        background: var(--blue);
+        color: var(--white);
+    }
+    .Tachestable tr:hover td h4 span {
+        color: var(--white);
+    }
 </style>
 <div class="container">
     <div class="sideBar">
@@ -379,7 +452,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="">
                     <span class="icon">
                        <ion-icon name="construct-outline"></ion-icon>
                     </span>
@@ -481,10 +554,10 @@
             </div>
         </div>
         <div class="details">
-            <div class="recentOrders">
+            <div class="Projets">
                 <div class="cardHeader">
-                    <h2>Recent Projets</h2>
-                    <a href="#" class="btn">View All</a>
+                    <h2>Projets</h2>
+                    <a href="#" class="btn">Plus</a>
                 </div>
 
                 <table>
@@ -500,78 +573,38 @@
                     </thead>
 
                     <tbody>
+                <c:forEach var="Projet" items="${Projets}">
                     <tr>
-                        <td>lllllllllllllll</td>
-                        <td>bbbbbbbbbbb</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
+
+                        <td><a href="ShowTaches?id=${Projet.getIdProjet()}">${Projet.getNomProjet()} </a></td>
+                        <td>${Projet.getDescriptionProjet()}</td>
+                        <td>${Projet.getDateDebutP()}</td>
+                        <td>${Projet.getDateFinP()}</td>
+                        <td>${Projet.getBudgetProjet()}</td>
                         <td><span class="Terminee">Terminee</span></td>
-                    </tr>
 
-                    <tr>
-                        <td>lllllllllll</td>
-                        <td>bbbbbbbbbbbbbb</td>
-                        <td>wwwwwwwwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td><span class="En cours">En cours</span></td>
                     </tr>
-
-                    <tr>
-                        <td>llllllllll</td>
-                        <td>bbbbbbbbb</td>
-                        <td>wwwwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td><span class="Bloquee">Bloquee</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>lllllllllllll</td>
-                        <td>bbbbbbbbb</td>
-                        <td>wwwwwwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td><span class="En cours">En cours</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>llllllllllll</td>
-                        <td>bbbbbbbbbbbbbb</td>
-                        <td>wwwwwwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td><span class="Terminee">Terminer</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>llllllllll</td>
-                        <td>bbbbbbbbbbbbbbbb</td>
-                        <td>wwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td><span class="En cours">En cours</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>lllllllllll</td>
-                        <td>bbbbbbbbbbbbbbbb</td>
-                        <td>wwwwwwwwwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td><span class="Bloquee">Bloquee</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>lllllllllll</td>
-                        <td>bbbbbbbbbbbbbbbb</td>
-                        <td>wwwwwwwwwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td>wwwwwwwwww</td>
-                        <td><span class="En cours">En cours</span></td>
-                    </tr>
+                </c:forEach>
                     </tbody>
+                </table>
+            </div>
+
+            <div class="Taches">
+                <div class="cardHeader">
+                    <h2>Taches</h2>
+                </div>
+
+                <table>
+        <c:forEach var="Tache" items="${Tache}">
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                        </td>
+                        <td>
+                            <h4> ${Tache.getDescription()} <br> <span>${Tache.getDateDebutTache()}--->${Tache.getDateFinTache()}</span></h4>
+                        </td>
+                    </tr>
+        </c:forEach>
                 </table>
             </div>
 
