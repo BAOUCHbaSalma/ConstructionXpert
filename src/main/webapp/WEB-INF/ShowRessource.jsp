@@ -10,7 +10,7 @@
 
 <c:forEach var="Ressources" items="${Ressources}">
     <div class="container mt-4">
-        <div class="card">
+        <div class="cardd">
             <div class="card-header">
                 <h2 class="card-title">Ressource N°: ${Ressources.getIdRessource()}</h2>
             </div>

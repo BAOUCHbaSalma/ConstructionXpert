@@ -6,7 +6,19 @@ private String nomRessource;
 private String typeRessource;
 private Integer quantiteRoussource;
 private String infoFournisseur;
+private String img;
 private Integer idTache;
+
+
+
+    public Ressources(Integer idRessource, String nomRessource, String typeRessource, Integer quantiteRoussource, String infoFournisseur, String img) {
+        this.idRessource = idRessource;
+        this.nomRessource = nomRessource;
+        this.typeRessource = typeRessource;
+        this.quantiteRoussource = quantiteRoussource;
+        this.infoFournisseur = infoFournisseur;
+        this.img = img;
+    }
 
     public Ressources(Integer idRessource, String nomRessource, String typeRessource, Integer quantiteRoussource, String infoFournisseur) {
         this.idRessource = idRessource;
@@ -25,6 +37,14 @@ private Integer idTache;
         this.idTache = idTache;
     }
 
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
     public Integer getIdRessource() {
         return idRessource;
     }
