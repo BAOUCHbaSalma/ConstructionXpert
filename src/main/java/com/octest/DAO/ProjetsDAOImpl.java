@@ -1,5 +1,6 @@
 package com.octest.DAO;
 
+import com.octest.DTO.ProjetTasks;
 import com.octest.beans.Projets;
 import com.octest.config.ConnectionDAO;
 
@@ -8,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ProjetsDAOImpl implements ProjetsDAO{
     @Override
@@ -90,4 +92,44 @@ public class ProjetsDAOImpl implements ProjetsDAO{
         s.executeUpdate();
 
     }
+
+    @Override
+    public ArrayList<ProjetTasks> StatusTasks() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT t.statutTache, p.idProjet, p.nomProjet, p.descriptionProjet, p.dateDebutProjet, p.dateFinProjet, p.Budget, COUNT(t.statutTache) AS nb_task FROM tache t INNER JOIN projet p on t.idProjet = p.idProjet WHERE t.statutTache = 'Terminee' GROUP BY p.idProjet";
+        PreparedStatement statement = ConnectionDAO.getConnection().prepareStatement(sql);
+        ResultSet resultat = statement.executeQuery();
+        ArrayList<ProjetTasks> projetTasks = new ArrayList<>();
+
+        while (resultat.next()) {
+            ProjetTasks projetTask = new ProjetTasks();
+            projetTask.setIdProjet(resultat.getInt("idProjet"));
+            projetTask.setNomProjet(resultat.getString("nomProjet"));
+            projetTask.setDescriptionProjet(resultat.getString("descriptionProjet"));
+            projetTask.setDateDebutP(resultat.getDate("dateDebutProjet"));
+            projetTask.setDateFinP(resultat.getDate("dateFinProjet"));
+            projetTask.setBudgetProjet(resultat.getInt("Budget"));
+            projetTask.setNumberTask(resultat.getInt("nb_task"));
+            projetTasks.add(projetTask);
+        }
+
+        for (ProjetTasks projetTask : projetTasks) {
+            String sqls = "SELECT COUNT(t.idTache) as total_task FROM tache t INNER JOIN projet p on t.idProjet = p.idProjet WHERE p.idProjet = ?";
+            PreparedStatement st = ConnectionDAO.getConnection().prepareStatement(sqls);
+            st.setInt(1, projetTask.getIdProjet());
+            ResultSet resultatt = st.executeQuery();
+            if (resultatt.next()) {
+                projetTask.setTotalTask(resultatt.getInt("total_task"));
+                if (projetTask.getNumberTask() == projetTask.getTotalTask()) {
+                    projetTask.setStatutTache("Terminee");
+                } else {
+                    projetTask.setStatutTache("Encours");
+                }
+            }
+        }
+
+        projetTasks.forEach(projetTasks1 -> System.out.println(projetTasks1.getIdProjet() + "//" + projetTasks1.getStatutTache()));
+        return projetTasks;
+    }
+
+
 }

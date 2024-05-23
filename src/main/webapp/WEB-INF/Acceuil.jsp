@@ -172,7 +172,7 @@
                         <td>${Projet.getBudgetProjet()}</td>
                         <td>${Projet.getDateDebutP()}</td>
                         <td>${Projet.getDateFinP()}</td>
-                        <td><span class="Terminee">Terminee</span></td>
+                        <td><span class="Terminee">${Projet.getStatutTache()}</span></td>
 
                     </tr>
                 </c:forEach>

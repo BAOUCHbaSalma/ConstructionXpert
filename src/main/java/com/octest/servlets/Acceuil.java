@@ -15,7 +15,7 @@ public class Acceuil extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProjetsDAOImpl pr=new ProjetsDAOImpl();
         try {
-            request.setAttribute("Projets",pr.ShowProjet());
+            request.setAttribute("Projets",pr.StatusTasks());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
