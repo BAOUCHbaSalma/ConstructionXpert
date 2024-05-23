@@ -30,14 +30,7 @@
         <url-pattern>/updatep</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>test</servlet-name>
-        <servlet-class>com.octest.servlets.test</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>test</servlet-name>
-        <url-pattern>/t</url-pattern>
-    </servlet-mapping>
+
 
 
 </web-app>

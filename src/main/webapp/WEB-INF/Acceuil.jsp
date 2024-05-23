@@ -20,7 +20,7 @@
                     <span class="icon">
                        <ion-icon name="grid-outline"></ion-icon>
                     </span>
-                    <span class="title">Brand Name</span>
+                    <span class="title">ConstructionXpert</span>
                 </a>
             </li>
 
@@ -169,9 +169,9 @@
 
                         <td><a href="ShowTaches?id=${Projet.getIdProjet()}">${Projet.getNomProjet()} </a></td>
                         <td>${Projet.getDescriptionProjet()}</td>
+                        <td>${Projet.getBudgetProjet()}</td>
                         <td>${Projet.getDateDebutP()}</td>
                         <td>${Projet.getDateFinP()}</td>
-                        <td>${Projet.getBudgetProjet()}</td>
                         <td><span class="Terminee">Terminee</span></td>
 
                     </tr>

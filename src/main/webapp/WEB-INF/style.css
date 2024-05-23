@@ -468,16 +468,17 @@ body {
     margin: 0 auto;
 }
 .titre-cards > h1 {
+    margin-top:15px ;
     font-size: 20px;
     font-weight: 500;
-    color: #ffb4b4;
+   color: var(--black1);
     font-family:Arial, Helvetica, sans-serif;
 }
 
 .main-cards{
     width: 90%;
-    height: 600px;
-    padding: 15px 5px;
+    height: 400px;
+    padding: 5px 5px;
     display: flex;
     overflow: auto;
     margin: 0 auto;
@@ -485,6 +486,8 @@ body {
 }
 .card1{
     position: relative;
+    display: flex;
+
 }
 .card1 a{
     display: flex;
@@ -494,7 +497,6 @@ body {
     color: white;
     padding: 10px 12px;
     border-radius: 7px;
-
     transition: .6s;
 
 
@@ -506,7 +508,7 @@ body {
 }
 .cardD{
     width: 300px;
-    margin: 20px 5px;
+    margin: 10px 5px;
     height: 230px;
 }
 .cardD > div {
@@ -533,7 +535,38 @@ body {
     overflow-y: hidden;
     width: 30px;
 }
+
+.card #lien3{
+    position: absolute;
+    top: 160px;
+    right: -30px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 30px;
+}
+.card #lien4{
+    position: absolute;
+    top: 220px;
+    right: -30px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 30px;
+}
 .card #lien1:hover {
+    width: 200px;
+
+}
+.card #lien2:hover {
+    width: 200px;
+
+}
+.card #lien3:hover {
+    width: 200px;
+
+}
+.card #lien4:hover {
     width: 200px;
 
 }

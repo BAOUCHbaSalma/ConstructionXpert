@@ -17,7 +17,7 @@
                     <span class="icon">
                        <ion-icon name="grid-outline"></ion-icon>
                     </span>
-                    <span class="title">Brand Name</span>
+                    <span class="title">ConstructionXpert</span>
                 </a>
             </li>
 
@@ -77,8 +77,10 @@
 
     </div>
     <div class="main">
+
+
 <div class="titre-cards">
-    <h1>Disney Movies</h1>
+    <h1>Ressource materiel</h1>
 </div>
 
 <section class="main-cards">
@@ -98,15 +100,75 @@
 
 
                 <div class="card-content">
-                    <h2>2024</h2>
-                    <h3>Movie</h3>
-                    <h3>8K</h3>
+                    <h2></h2>
+                    <h3></h3>
+                    <h3></h3>
                 </div>
 
             </div>
         </c:forEach>
     </div>
 </section>
+        <div class="titre-cards">
+            <h1>Ressource materiel</h1>
+        </div>
+
+        <section class="main-cards">
+
+            <div class="card-wrapper">
+                <c:forEach var="Ressources" items="${Ressources}">
+                    <div class="cardD">
+                        <div>
+                            <img class="card_disney" src="${Ressources.getImg()}"/>
+
+                            </a>
+                            <div class="comments1">
+                                <i class="fa-regular fa-bookmark" ></i>
+                            </div>
+                        </div>
+                        <h1>${Ressources.getNomRessource()}</h1>
+
+
+                        <div class="card-content">
+                            <h2></h2>
+                            <h3></h3>
+                            <h3></h3>
+                        </div>
+
+                    </div>
+                </c:forEach>
+            </div>
+        </section>
+        <div class="titre-cards">
+            <h1>Ressource materiel</h1>
+        </div>
+
+        <section class="main-cards">
+
+            <div class="card-wrapper">
+                <c:forEach var="Ressources" items="${Ressources}">
+                    <div class="cardD">
+                        <div>
+                            <img class="card_disney" src="${Ressources.getImg()}"/>
+
+                            </a>
+                            <div class="comments1">
+                                <i class="fa-regular fa-bookmark" ></i>
+                            </div>
+                        </div>
+                        <h1>${Ressources.getNomRessource()}</h1>
+
+
+                        <div class="card-content">
+                            <h2></h2>
+                            <h3></h3>
+                            <h3></h3>
+                        </div>
+
+                    </div>
+                </c:forEach>
+            </div>
+        </section>
     </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
