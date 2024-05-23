@@ -103,33 +103,41 @@
             <li class="list-group-item">${Projet.getDateFinP()}</li>
             <li class="list-group-item">${Projet.getBudgetProjet()}</li>
         </ul>
-        <a href="${Projet.getIdProjet()}" id="lien1"><ion-icon name="trash-outline"></ion-icon>Remove</a>
-        <a href="updatep?id=${Projet.getIdProjet()}" id="lien2"><ion-icon name="trash-outline"></ion-icon> Update</a>
-    <a href="ShowTachesProjet?id=${Projet.getIdProjet()}" id="lien3"><ion-icon name="trash-outline"></ion-icon>Show Tasks</a>
-    <a href="ShowTaches?id=${Projet.getIdProjet()}" id="lien4"><ion-icon name="trash-outline"></ion-icon>Add Taches</a>
+        <div class="All-icons">
+            <a href="${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
+            <a href="updatep?id=${Projet.getIdProjet()}" class="lien2"><ion-icon name="create-outline"></ion-icon></a>
+            <a href="ShowTaches?id=${Projet.getIdProjet()}" class="lien3"><ion-icon name="add-circle-outline"></ion-icon></a>
+            <a href="ShowTachesProjet?id=${Projet.getIdProjet()}" class="lien4"><ion-icon name="eye-outline"></ion-icon></a>
+        </div>
     </div>
 </c:forEach>
 
 
-   <!-- <c:forEach var="Projet" items="${Projets}">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Projet N°: ${Projet.getIdProjet()}</h5>
-                <h5 class="card-title">${Projet.getNomProjet()}</h5>
-                <p class="card-text">${Projet.getDescriptionProjet()}</p>
-                <p class="card-text"><small class="text-muted">Date de début: ${Projet.getDateDebutP()}</small></p>
-                <p class="card-text"><small class="text-muted">Date de fin: ${Projet.getDateFinP()}</small></p>
-                <p class="card-text"><small class="text-muted">Budget: ${Projet.getBudgetProjet()}</small></p>
-                <a href="updatep?id=${Projet.getIdProjet()}" class="btn btn-warning">Modifier</a>
-                <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="btn btn-danger">Supprimer</a>
-                <a href="ShowTaches?id=${Projet.getIdProjet()}" class="btn btn-info">Voir Tâches</a>
-                <a href="ShowTaches?id=${Projet.getIdProjet()}" class="btn btn-success">Ajouter Tâche</a>
-            </div>
-        </div>
-    </c:forEach> -->
 </div>
-
     </div>
+    </div>
+    <script>
+        document.querySelectorAll(".card1").forEach((card) => {
+            const allIcons = card.querySelector(".All-icons");
+            let isExpanded = false;
+
+            card.addEventListener("mouseenter", () => {
+                if (!isExpanded) {
+                    allIcons.style.transition = ".6s";
+                    allIcons.style.height = "50px";
+                    isExpanded = true;
+                }
+            });
+
+            card.addEventListener("mouseleave", () => {
+                if (isExpanded) {
+                    allIcons.style.transition = ".6s";
+                    allIcons.style.height = "0px";
+                    isExpanded = false;
+                }
+            });
+        });
+    </script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

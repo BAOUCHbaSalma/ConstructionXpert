@@ -6,35 +6,83 @@
   <meta charset="UTF-8">
   <title>Gestion des Tâches</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style><%@include file="style.css"%></style>
 </head>
 <body>
-<div class="container mt-5">
-  <h5 class="mb-4">Ajouter Tâche</h5>
-  <form action="ShowTaches" method="post" class="mb-4">
-    <div class="form-group">
-      <label for="descriptionTache">Description</label>
-      <input type="text" class="form-control" id="descriptionTache" name="descriptionTache" placeholder="Entrer description">
-    </div>
-    <div class="form-group">
-      <label for="DateDebutTache">Date de début</label>
-      <input type="date" class="form-control" id="DateDebutTache" name="DateDebutTache">
-    </div>
-    <div class="form-group">
-      <label for="DateFinTache">Date de fin</label>
-      <input type="date" class="form-control" id="DateFinTache" name="DateFinTache">
-    </div>
-    <div class="form-group">
-      <label for="StatutTache">Statut</label>
-      <input type="text" class="form-control" id="StatutTache" name="StatutTache" placeholder="Entrer statut">
-    </div>
-    <input type="hidden" name="id" value="${idProjet}">
-    <button type="submit" class="btn btn-primary">Ajouter</button>
-  </form>
+<div class="general">
+  <div class="sideBar">
+    <ul>
 
+      <li>
+        <a href="#">
+                    <span class="icon">
+                       <ion-icon name="grid-outline"></ion-icon>
+                    </span>
+          <span class="title">ConstructionXpert</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="Acceuil">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="ShowProjets">
+                    <span class="icon">
+                       <ion-icon name="business-outline"></ion-icon>
+                    </span>
+          <span class="title">Projets</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="ShowAllRessource">
+                    <span class="icon">
+                       <ion-icon name="construct-outline"></ion-icon>
+                    </span>
+          <span class="title">Ressources</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+                    <span class="icon">
+                       <ion-icon name="help-outline"></ion-icon>
+                    </span>
+          <span class="title">Help</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+                    <span class="icon">
+                       <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+          <span class="title">Settings</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+                    <span class="icon">
+                      <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+          <span class="title">Log out</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+  <div class="main">
   <div class="mt-5">
     <h5 class="mb-4">Liste des Tâches</h5>
     <div class="list-group">
-      <c:forEach var="Tache" items="${Tache}">
+      
+      <!--<c:forEach var="Tache" items="${Tache}">
         <div class="list-group-item mb-2">
           <h5 class="mb-1">Tâche N°: ${Tache.getIdTache()}</h5>
           <p class="mb-1">Description: ${Tache.getDescription()}</p>
@@ -49,12 +97,15 @@
             <a href="ShowRessource?id=${Tache.getIdTache()}" class="btn btn-success btn-sm">Ajouter Ressources</a>
           </div>
         </div>
-      </c:forEach>
+      </c:forEach>-->
+
     </div>
   </div>
 </div>
+</div>
 
-
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

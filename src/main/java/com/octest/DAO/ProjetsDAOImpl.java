@@ -122,12 +122,12 @@ public class ProjetsDAOImpl implements ProjetsDAO{
                 if (projetTask.getNumberTask() == projetTask.getTotalTask()) {
                     projetTask.setStatutTache("Terminee");
                 } else {
-                    projetTask.setStatutTache("Encours");
+                    projetTask.setStatutTache("En cours");
                 }
             }
         }
 
-        projetTasks.forEach(projetTasks1 -> System.out.println(projetTasks1.getIdProjet() + "//" + projetTasks1.getStatutTache()));
+
         return projetTasks;
     }
 

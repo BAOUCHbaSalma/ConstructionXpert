@@ -172,7 +172,7 @@
                         <td>${Projet.getBudgetProjet()}</td>
                         <td>${Projet.getDateDebutP()}</td>
                         <td>${Projet.getDateFinP()}</td>
-                        <td><span class="Terminee">${Projet.getStatutTache()}</span></td>
+                        <td><span class="${Projet.getStatutTache()}">${Projet.getStatutTache()}</span></td>
 
                     </tr>
                 </c:forEach>
@@ -201,7 +201,8 @@
 
 
     </div>
-
+    </div>
+</div>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
