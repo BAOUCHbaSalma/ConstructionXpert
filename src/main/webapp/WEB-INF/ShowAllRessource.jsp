@@ -99,12 +99,6 @@
                 <h1>${Ressources.getNomRessource()}</h1>
 
 
-                <div class="card-content">
-                    <h2></h2>
-                    <h3></h3>
-                    <h3></h3>
-                </div>
-
             </div>
         </c:forEach>
     </div>
@@ -127,13 +121,6 @@
                             </div>
                         </div>
                         <h1>${Ressources.getNomRessource()}</h1>
-
-
-                        <div class="card-content">
-                            <h2></h2>
-                            <h3></h3>
-                            <h3></h3>
-                        </div>
 
                     </div>
                 </c:forEach>
@@ -159,11 +146,6 @@
                         <h1>${Ressources.getNomRessource()}</h1>
 
 
-                        <div class="card-content">
-                            <h2></h2>
-                            <h3></h3>
-                            <h3></h3>
-                        </div>
 
                     </div>
                 </c:forEach>

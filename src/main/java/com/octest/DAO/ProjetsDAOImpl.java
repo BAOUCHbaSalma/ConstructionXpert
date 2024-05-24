@@ -26,7 +26,8 @@ public class ProjetsDAOImpl implements ProjetsDAO{
             Date dateDebutProjet = resultat.getDate("dateDebutProjet");
             Date dateFinProjet = resultat.getDate("dateFinProjet");
             Integer Budget = resultat.getInt("Budget");
-            Projets prt=new Projets(idProjet,nomProjet,descriptionProjet,dateDebutProjet,dateFinProjet,Budget);
+            String img=resultat.getString("Img");
+            Projets prt=new Projets(idProjet,nomProjet,descriptionProjet,dateDebutProjet,dateFinProjet,Budget,img);
             projets.add(prt);
 
         }
@@ -72,7 +73,8 @@ public class ProjetsDAOImpl implements ProjetsDAO{
             Date dateDebutProjet= resultat.getDate("dateDebutProjet");
             Date dateFinProjet = resultat.getDate("dateFinProjet");
             Integer Budget = resultat.getInt("Budget");
-            pr = new Projets(idProjett, nomProjet,descriptionProjet,dateDebutProjet, dateFinProjet,Budget);
+            String img=resultat.getString("Img");
+            pr = new Projets(idProjett, nomProjet,descriptionProjet,dateDebutProjet, dateFinProjet,Budget,img);
 
 
         }

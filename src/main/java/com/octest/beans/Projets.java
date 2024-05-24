@@ -10,6 +10,15 @@ public class Projets {
    private Date dateDebutP;
    private Date  dateFinP;
    private Integer BudgetProjet;
+   private String img;
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
 
     public Projets(String nomProjet, String descriptionProjet, Date dateDebutP, Date dateFinP, Integer budgetProjet) {
         this.nomProjet = nomProjet;
@@ -19,13 +28,14 @@ public class Projets {
         BudgetProjet = budgetProjet;
     }
 
-    public Projets(Integer idProjet, String nomProjet, String descriptionProjet, Date dateDebutP, Date dateFinP, Integer budgetProjet) {
+    public Projets(Integer idProjet, String nomProjet, String descriptionProjet, Date dateDebutP, Date dateFinP, Integer budgetProjet , String img) {
         this.idProjet = idProjet;
         this.nomProjet = nomProjet;
         this.descriptionProjet = descriptionProjet;
         this.dateDebutP = dateDebutP;
         this.dateFinP = dateFinP;
-        BudgetProjet = budgetProjet;
+       this.BudgetProjet = budgetProjet;
+        this.img=img;
     }
 
     public Integer getIdProjet() {
