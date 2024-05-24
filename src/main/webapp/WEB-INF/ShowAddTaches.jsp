@@ -81,8 +81,8 @@
   <div class="mt-5">
     <h5 class="mb-4">Liste des Tâches</h5>
     <div class="list-group">
-      
-      <!--<c:forEach var="Tache" items="${Tache}">
+
+      <c:forEach var="Tache" items="${Tache}">
         <div class="list-group-item mb-2">
           <h5 class="mb-1">Tâche N°: ${Tache.getIdTache()}</h5>
           <p class="mb-1">Description: ${Tache.getDescription()}</p>
@@ -97,7 +97,7 @@
             <a href="ShowRessource?id=${Tache.getIdTache()}" class="btn btn-success btn-sm">Ajouter Ressources</a>
           </div>
         </div>
-      </c:forEach>-->
+      </c:forEach>
 
     </div>
   </div>
