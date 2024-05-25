@@ -109,24 +109,29 @@
                            <p>-----></p>
                            <p>${tache.getDateFinTache()}</p>
                        </div>
-                       <button>
+                       <button id="btn-resource" class="btn-resource">
                            <span>Resource</span><br>
                            <ion-icon id="res" name="construct-outline"></ion-icon>
                        </button>
                    </div>
                     <div class="resourceP">
                         <div class="resourceControls">
-                            <button><ion-icon name="close-circle-outline"></ion-icon></button>
+                            <button class="close"><ion-icon name="close-circle-outline"></ion-icon></button>
                         </div>
-                        <c:forEach var="ressource" items="${tache.getRessource()}">
+
                         <div class="RP">
+
                             <div class="img-resource">
-                                <div class="mini-img-resource">
+                                <c:forEach var="ressource" items="${tache.getRessource()}">
+                                <div class="mini-img-resource ">
                                     <img src="${ressource.getImg()}" width="100%" />
+                                    <p>${ressource.getNomRessource()}</p>
                                 </div>
+                                </c:forEach>
                             </div>
+
                         </div>
-                        </c:forEach>
+
                     </div>
                 </div>
                 </c:forEach>
@@ -146,6 +151,24 @@
 
 <script>
 
+    document.querySelectorAll(".task").forEach((task) => {
+        const open = task.querySelector(".btn-resource");
+        const close = task.querySelector(".close");
+        const popup = task.querySelector(".resourceP");
+
+        open.addEventListener("click", () => {
+            popup.style.display = "block";
+        });
+
+        close.addEventListener("click", () => {
+            popup.style.display = "none";
+        });
+    });
+
+
+
+
+
     let toggle = document.querySelector(".toggle");
     let navigation = document.querySelector(".sideBar");
     let main = document.querySelector(".main");
@@ -154,6 +177,7 @@
         navigation.classList.toggle("active");
         main.classList.toggle("active");
     };
+
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
