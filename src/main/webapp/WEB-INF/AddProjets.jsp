@@ -85,15 +85,27 @@
     </div>
 
     <div class="main" style="width: 100%">
+        <div class="topbarP">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
 
-<div class="p-4 d-flex" style="width: 90%; flex-wrap: wrap; gap: 50px">
-<c:forEach var="Projet" items="${Projets}">
-    <div class="card card1" style="width: 20rem;">
-        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img"
-             aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title><rect width="100%" height="100%" fill="#868e96">
+            <div class="searchP">
+                <label id="lb">
+                    <input type="text" placeholder="Search here">
+                    <ion-icon id="iconS" name="search-outline"></ion-icon>
+                </label>
+            </div>
 
-        </rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em"><img src="${Projet.getImg()}"></text></svg>
+            <div class="profile">
+
+            </div>
+        </div>
+
+        <div class="p-4 d-flex" style="width: 90%; flex-wrap: wrap; gap: 30px; margin-left:30px">
+            <c:forEach var="Projet" items="${Projets}">
+                <div class="card card1" style="width: 20rem;">
+                    <img style="height: 200px" src="${Projet.getImg()}" class="card-img-top img">
         <div class="card-body">
             <h5 class="card-title">${Projet.getNomProjet()}</h5>
             <p class="card-text">${Projet.getDescriptionProjet()}</p>
@@ -116,28 +128,38 @@
 </div>
     </div>
     </div>
-    <script>
-        document.querySelectorAll(".card1").forEach((card) => {
-            const allIcons = card.querySelector(".All-icons");
-            let isExpanded = false;
+<script>
+    document.querySelectorAll(".card1").forEach((card) => {
+        const allIcons = card.querySelector(".All-icons");
+        let isExpanded = false;
 
-            card.addEventListener("mouseenter", () => {
-                if (!isExpanded) {
-                    allIcons.style.transition = ".6s";
-                    allIcons.style.height = "50px";
-                    isExpanded = true;
-                }
-            });
-
-            card.addEventListener("mouseleave", () => {
-                if (isExpanded) {
-                    allIcons.style.transition = ".6s";
-                    allIcons.style.height = "0px";
-                    isExpanded = false;
-                }
-            });
+        card.addEventListener("mouseenter", () => {
+            if (!isExpanded) {
+                allIcons.style.transition = ".6s";
+                allIcons.style.height = "50px";
+                isExpanded = true;
+            }
         });
-    </script>
+
+        card.addEventListener("mouseleave", () => {
+            if (isExpanded) {
+                allIcons.style.transition = ".6s";
+                allIcons.style.height = "0px";
+                isExpanded = false;
+            }
+        });
+    });
+
+    let toggle = document.querySelector(".toggle");
+    let navigation = document.querySelector(".sideBar");
+    let main = document.querySelector(".main");
+
+    toggle.onclick = function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+    };
+
+</script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -11,4 +11,5 @@ public interface TachesDAO {
     void DeleteTaches(Integer idTache) throws SQLException, ClassNotFoundException;
     Taches RecupererTache(Integer idTache) throws SQLException, ClassNotFoundException;
     void UpdateTache(Integer idTache, Taches tache) throws SQLException, ClassNotFoundException;
+    ArrayList<Taches> TacheRessources(Integer idProjet) throws SQLException, ClassNotFoundException;
 }

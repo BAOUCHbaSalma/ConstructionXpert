@@ -78,32 +78,83 @@
 
   </div>
   <div class="main">
-  <div class="mt-5">
-    <h5 class="mb-4">Liste des Tâches</h5>
-    <div class="list-group">
-
-      <c:forEach var="Tache" items="${Tache}">
-        <div class="list-group-item mb-2">
-          <h5 class="mb-1">Tâche N°: ${Tache.getIdTache()}</h5>
-          <p class="mb-1">Description: ${Tache.getDescription()}</p>
-          <p class="mb-1">Date de début: ${Tache.getDateDebutTache()}</p>
-          <p class="mb-1">Date de fin: ${Tache.getDateFinTache()}</p>
-          <p class="mb-1">Statut: ${Tache.getStatutTache()}</p>
-          <p class="mb-1">Projet N°: ${Tache.getIdProjet()}</p>
-          <div class="d-flex justify-content-start">
-            <a href="UpdateTache?id=${Tache.getIdTache()}" class="btn btn-warning btn-sm mr-2">Modifier</a>
-            <a href="DeleteTache?id=${Tache.getIdTache()}" class="btn btn-danger btn-sm mr-2">Supprimer</a>
-            <a href="ShowRessourceTache?id=${Tache.getIdTache()}" class="btn btn-info btn-sm mr-2">Afficher Ressources</a>
-            <a href="ShowRessource?id=${Tache.getIdTache()}" class="btn btn-success btn-sm">Ajouter Ressources</a>
+      <div class="topbar">
+          <div class="toggle">
+              <ion-icon name="menu-outline"></ion-icon>
           </div>
+
+          <div class="search">
+              <label>
+                  <input type="text" placeholder="Search here">
+                  <ion-icon name="search-outline"></ion-icon>
+              </label>
+          </div>
+
+          <div class="user">
+              <img src="assets/imgs/customer01.jpg" alt="">
+          </div>
+      </div>
+
+      <div class="main-wrapper">
+        <div class="afaire">
+        <H2>A faire</H2>
+
+            <div class="TaskF">
+                <c:forEach var="tache" items="${Tache}">
+                <div class="task">
+                    <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                   <div class="taskD1">
+                       <div>
+                           <p>${tache.getDateDebutTache()}</p>
+                           <p>-----></p>
+                           <p>${tache.getDateFinTache()}</p>
+                       </div>
+                       <button>
+                           <span>Resource</span><br>
+                           <ion-icon id="res" name="construct-outline"></ion-icon>
+                       </button>
+                   </div>
+                    <div class="resourceP">
+                        <div class="resourceControls">
+                            <button><ion-icon name="close-circle-outline"></ion-icon></button>
+                        </div>
+                        <c:forEach var="ressource" items="${tache.getRessource()}">
+                        <div class="RP">
+                            <div class="img-resource">
+                                <div class="mini-img-resource">
+                                    <img src="${ressource.getImg()}" width="100%" />
+                                </div>
+                            </div>
+                        </div>
+                        </c:forEach>
+                    </div>
+                </div>
+                </c:forEach>
+            </div>
+
         </div>
-      </c:forEach>
 
+        <div class="encours">
+            <H2>A faire</H2>
+        </div>
+        <div class="termine">
+            <H2>A faire</H2>
+        </div>
     </div>
-  </div>
 </div>
 </div>
 
+<script>
+
+    let toggle = document.querySelector(".toggle");
+    let navigation = document.querySelector(".sideBar");
+    let main = document.querySelector(".main");
+
+    toggle.onclick = function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+    };
+</script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

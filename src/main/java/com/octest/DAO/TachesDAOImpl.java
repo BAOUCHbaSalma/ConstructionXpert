@@ -1,6 +1,7 @@
 package com.octest.DAO;
 
 import com.octest.beans.Projets;
+import com.octest.beans.Ressources;
 import com.octest.beans.Taches;
 import com.octest.config.ConnectionDAO;
 
@@ -86,5 +87,47 @@ public class TachesDAOImpl implements TachesDAO{
         s.setInt(6,idTache);
         s.executeUpdate();
 
+    }
+
+    @Override
+    public ArrayList<Taches> TacheRessources(Integer idProjet) throws SQLException, ClassNotFoundException {
+        String sql="SELECT * FROM tache WHERE idProjet=?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sql);
+        s.setInt(1,idProjet);
+        ResultSet resultat = s.executeQuery();
+         ArrayList<Taches> tache=new ArrayList<>();
+        while (resultat.next()) {
+            Integer idTache = resultat.getInt("idTache");
+            String descriptionTache=resultat.getString("descriptionTache");
+            Date dateDebutTache = resultat.getDate("dateDebutTache");
+            Date dateFinTache = resultat.getDate("dateFinTache");
+            String statutTache = resultat.getString("statutTache");
+           Taches t=new Taches();
+           t.setIdTache(idTache);
+           t.setStatutTache(statutTache);
+           t.setDescription(descriptionTache);
+           t.setDateDebutTache(dateDebutTache);
+           t.setDateFinTache(dateFinTache);
+           String sqls="SELECT * FROM ressource WHERE idTache=?";
+           PreparedStatement r=ConnectionDAO.getConnection().prepareStatement(sqls);
+            r.setInt(1,idTache);
+           ResultSet resultatt=r.executeQuery();
+           ArrayList<Ressources> rr=new ArrayList<>();
+            while(resultatt.next()) {
+                Integer idRessource=resultatt.getInt("idRessource");
+                String nomRessource=resultatt.getString("nomRessource");
+                String typeRessource = resultatt.getString("typeRessource");
+                Integer quantiteRessource = resultatt.getInt("quantiteRessource");
+                String infoFournisseur = resultatt.getString("infoFournisseur");
+                String img = resultatt.getString("Img");
+                Ressources rss=new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,img);
+                rr.add(rss);
+            }
+
+
+           t.setRessource(rr);
+            tache.add(t);
+        }
+        return tache;
     }
 }

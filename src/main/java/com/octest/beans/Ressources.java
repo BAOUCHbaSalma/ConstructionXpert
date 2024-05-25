@@ -92,4 +92,17 @@ private Integer idTache;
     public void setIdTache(Integer idTache) {
         this.idTache = idTache;
     }
+
+    @Override
+    public String toString() {
+        return "Ressources{" +
+                "idRessource=" + idRessource +
+                ", nomRessource='" + nomRessource + '\'' +
+                ", typeRessource='" + typeRessource + '\'' +
+                ", quantiteRoussource=" + quantiteRoussource +
+                ", infoFournisseur='" + infoFournisseur + '\'' +
+                ", img='" + img + '\'' +
+                ", idTache=" + idTache +
+                '}';
+    }
 }

@@ -11,7 +11,30 @@ public class Taches {
    private Date dateFinTache;
    private String statutTache;
    private Integer idProjet;
-   ArrayList<Ressources> Ressource;
+  private ArrayList<Ressources> Ressource;
+
+    public ArrayList<Ressources> getRessource() {
+        return Ressource;
+    }
+
+    public void setRessource(ArrayList<Ressources> ressource) {
+        Ressource = ressource;
+    }
+
+
+    public Taches(Integer idTache, String description, Date dateDebutTache, Date dateFinTache, String statutTache, Integer idProjet, ArrayList<Ressources> ressource) {
+        this.idTache = idTache;
+        this.description = description;
+        this.dateDebutTache = dateDebutTache;
+        this.dateFinTache = dateFinTache;
+        this.statutTache = statutTache;
+        this.idProjet = idProjet;
+        Ressource = ressource;
+    }
+
+    public Taches() {
+
+    }
 
     public Taches(Integer idTache, String description, Date dateDebutTache, Date dateFinTache, String statutTache, Integer idProjet) {
         this.idTache = idTache;
@@ -77,5 +100,18 @@ public class Taches {
 
     public void setIdProjet(Integer idProjet) {
         this.idProjet = idProjet;
+    }
+
+    @Override
+    public String toString() {
+        return "Taches{" +
+                "idTache=" + idTache +
+                ", description='" + description + '\'' +
+                ", dateDebutTache=" + dateDebutTache +
+                ", dateFinTache=" + dateFinTache +
+                ", statutTache='" + statutTache + '\'' +
+                ", idProjet=" + idProjet +
+                ", Ressource=" + Ressource +
+                '}';
     }
 }

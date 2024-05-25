@@ -1,6 +1,7 @@
 package com.octest.servlets;
 
 import com.octest.DAO.ProjetsDAOImpl;
+import com.octest.DAO.RessourcesDAOImpl;
 import com.octest.DAO.TachesDAOImpl;
 import com.octest.beans.Taches;
 
@@ -16,18 +17,18 @@ public class ShowTaches extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProjetsDAOImpl pr=new ProjetsDAOImpl();
+        Integer id=Integer.valueOf(request.getParameter("id"));
+
+        TachesDAOImpl ta=new TachesDAOImpl();
         try {
-            request.setAttribute("Projets",pr.ShowProjet());
+            request.setAttribute("Tache",ta.ShowTaches(id));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        Integer id=Integer.valueOf(request.getParameter("id"));
-        request.setAttribute("idProjet",id);
-        TachesDAOImpl ta=new TachesDAOImpl();
         try {
-            request.setAttribute("Tache",ta.ShowTaches(id));
+            request.setAttribute("Projets",pr.StatusTasks());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

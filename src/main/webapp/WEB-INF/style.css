@@ -534,6 +534,191 @@ body {
 .All-icons > a:hover{
     color: #1795ce;
 }
+.topbarP{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.profile{
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background: black;
+    display: flex;
+}
+.searchP{
+    width: 400px;
+}
+#lb{
+    display: flex;
+    padding: 10px 14px;
+    border:1px solid black;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+#lb > input{
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 90%;
+}
+.main-wrapper{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.main-wrapper > div{
+    width: 35%;
+    height: 90%;
+   background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #d3d3d3;
+    margin: 4px;
+}
+.main-wrapper > div > h2{
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+    padding: 15px 20px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+.TaskF{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: relative;
+}
+.task{
+    width: 95%;
+    border-radius: 7px;
+    box-shadow: 0 0 15px #c2c1c1;
+    padding: 10px 20px;
+    margin: 3px auto;
+}
+.task > h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a2185;
+}
+.task > .taskD1 {
+    display: flex;justify-content: space-between;
+    align-items: center;
+}
+
+.task > .taskD1 > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.task > .taskD1 > div> p{
+    padding: 7px 10px;
+    color: #1b1841;
+    margin: 3px;
+    font-size: 12px;
+}
+.task > h3{
+    font-size: 12px;
+    color: black;
+    padding: 5px;
+    background: #8de02c;
+    border-radius: 5px;
+    width: 40%;
+}
+.task >.taskD1> button{
+    background: transparent;
+    padding: 10px 14px;
+    border: 1px solid black;
+    color: black;
+    border-radius: 7px;
+}
+.task > div > button > span{
+    font-size: 12px;
+    font-weight: 200;
+}
+.task > div > button > #res{
+    color: black;
+    font-size: 12px;
+}
+.resourceP{
+    width: 300px;
+    height: 300px;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(15px);
+    position: absolute;
+    top:50px;
+    right: -180px;
+    z-index: 999;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #949494;
+}
+
+.resourceControls{
+    width: 50px;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background: transparent;
+    position: absolute;
+    top: -10px;
+    right: -50px;
+}
+.resourceControls > h4{
+    font-size: 16px;
+    font-weight: 600;
+    color:black;
+    padding: 5px;
+}
+.resourceControls > button{
+    background: transparent;
+    border: none;
+    color: black;
+    font-size: 23px;
+}
+.RP{
+    width: 100%;
+    height:300px;
+    overflow: auto;
+}
+.img-resource{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+}
+.img-resource {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.mini-img-resource{
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    box-shadow: 0 0 15px #bbb8b8;
+    background: cadetblue;
+    margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 ::-webkit-scrollbar {
