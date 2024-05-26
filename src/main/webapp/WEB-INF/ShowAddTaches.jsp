@@ -94,7 +94,36 @@
               <img src="assets/imgs/customer01.jpg" alt="">
           </div>
       </div>
-
+      <section class="sectionAddTache">
+          <button class="AddTache btn btn-outline-primary">Add Project</button>
+          <div class="generalFormTach">
+              <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
+              <form action="add" method="post" class="mb-4">
+                  <input type="hidden" name="itemId">
+                  <div class="form-group">
+                      <label for="itemName">Nom du projet</label>
+                      <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                  </div>
+                  <div class="form-group">
+                      <label for="itemDateDebut">Date de début</label>
+                      <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                  </div>
+                  <div class="form-group">
+                      <label for="itemDateFin">Date de fin</label>
+                      <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                  </div>
+                  <div class="form-group">
+                      <label for="itemBudget">Budget</label>
+                      <input type="number" class="form-control" id="itemBudget" name="itemBudget"  placeholder="Entrer budget">
+                  </div>
+                  <div class="form-group">
+                      <label for="itemDescription">Description</label>
+                      <textarea class="form-control" id="itemDescription" name="itemDescription" placeholder="Entrer description"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Ajouter</button>
+              </form>
+          </div>
+      </section>
       <div class="main-wrapper">
           <div class="afaire">
                   <h2><em>En cours</em></h2>
@@ -102,7 +131,14 @@
                   <div class="TaskF">
                       <c:forEach var="tache" items="${TacheE}">
                           <div class="task">
-                              <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                              <div class="iconsT">
+                                  <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                                  <div class="icons-tache">
+                                      <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
+                                      <a class="lien2"><ion-icon name="create-outline"></ion-icon></a>
+                                      <a href="ShowTaches?id=${Projet.getIdProjet()}" class="lien3"><ion-icon name="add-circle-outline"></ion-icon></a>
+                                  </div>
+                              </div>
                               <div class="taskD1">
                                   <div>
                                       <p>${tache.getDateDebutTache()}</p>
@@ -146,7 +182,39 @@
                   <div class="TaskF">
                       <c:forEach var="tache" items="${TacheB}">
                           <div class="task">
-                              <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                              <div class="iconsT">
+                                  <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                                  <div class="icons-tache">
+                                      <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
+                                      <a class="lien2"><ion-icon name="create-outline"></ion-icon></a>
+                                      <a class="lien3"><ion-icon name="add-circle-outline"></ion-icon></a>
+                                  </div>
+                                  <div class="modifieTach">
+                                      <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                      <form action="add" method="post" class="mb-4">
+                                          <input type="hidden" name="itemId">
+                                          <div class="form-group">
+                                              <label for="itemName">Nom du projet</label>
+                                              <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="itemDateDebut">Date de début</label>
+                                              <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="itemDateFin">Date de fin</label>
+                                              <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                                          </div>
+                                          <select class="form-select" aria-label="Default select example" name="status">
+                                              <option selected>Open this select menu</option>
+                                              <option value="En cours">En cours</option>
+                                              <option value="Bloquee">Bloquee</option>
+                                              <option value="Terminee">Terminee</option>
+                                          </select>
+                                          <button type="submit" class="btn btn-primary">Ajouter</button>
+                                      </form>
+                                  </div>
+                              </div>
                               <div class="taskD1">
                                   <div>
                                       <p>${tache.getDateDebutTache()}</p>
@@ -189,7 +257,15 @@
                   <div class="TaskF">
                       <c:forEach var="tache" items="${TacheT}">
                           <div class="task">
-                              <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                              <div class="iconsT">
+                                  <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                                  <div class="icons-tache">
+                                      <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
+                                      <a class="lien2"><ion-icon name="create-outline"></ion-icon></a>
+                                      <a href="ShowTaches?id=${Projet.getIdProjet()}" class="lien3"><ion-icon name="add-circle-outline"></ion-icon></a>
+                                  </div>
+
+                              </div>
                               <div class="taskD1">
                                   <div>
                                       <p>${tache.getDateDebutTache()}</p>
@@ -207,7 +283,6 @@
                                   </div>
 
                                   <div class="RP">
-
                                       <div class="img-resource">
                                           <c:forEach var="ressource" items="${tache.getRessource()}">
                                               <div class="mini-img-resource ">
@@ -216,7 +291,6 @@
                                               </div>
                                           </c:forEach>
                                       </div>
-
                                   </div>
 
                               </div>
@@ -245,8 +319,33 @@
             popup.style.display = "none";
         });
     });
+    document.querySelectorAll(".task").forEach(T =>{
+        const iconsT = T.querySelectorAll(".iconsT");
+        iconsT.forEach(e =>{
+            const popup = e.querySelector(".modifieTach");
+            const popup2 = e.querySelectorAll(".modifieTach");
+            const iconsTache = e.querySelectorAll(".icons-tache");
+            iconsTache.forEach(i =>{
+                const lien3 = i.querySelector(".lien3");
+                lien3.addEventListener("click", ()=>{
+                    popup.style.display = "block";
+                })
+            })
+            popup2.forEach(p =>{
+                const close = p.querySelector(".close-add");
+                close.addEventListener("click" , ()=>{
+                    popup.style.display = "none";
+                })
+            })
+        })
+    })
 
-
+    document.querySelector(".AddTache").addEventListener("click",()=>{
+        document.querySelector(".generalFormTach").style.display = "flex";
+    })
+    document.querySelector(".close-add").addEventListener("click",()=>{
+        document.querySelector(".generalFormTach").style.display = "none";
+    })
 
 
 
