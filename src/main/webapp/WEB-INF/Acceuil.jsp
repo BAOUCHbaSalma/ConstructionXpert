@@ -189,9 +189,6 @@
                 <table>
         <c:forEach var="Tache" items="${Tache}">
                     <tr>
-                        <td width="60px">
-                            <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                        </td>
                         <td>
                             <h4> ${Tache.getDescription()} <br> <span>${Tache.getDateDebutTache()}--->${Tache.getDateFinTache()}</span></h4>
                         </td>

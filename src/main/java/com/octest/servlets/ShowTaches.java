@@ -40,21 +40,7 @@ public class ShowTaches extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer id=Integer.valueOf(request.getParameter("id"));
-        String description=request.getParameter("descriptionTache");
-        Date dateDebut=Date.valueOf(request.getParameter("DateDebutTache"));
-        Date dateFin=Date.valueOf(request.getParameter("DateFinTache"));
-        String StatutTache=request.getParameter("StatutTache");
-      Taches th=new Taches(description,dateDebut,dateFin,StatutTache,id);
-        TachesDAOImpl td=new TachesDAOImpl();
-        try {
-            td.AddTaches(th);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        this.getServletContext().getRequestDispatcher("/WEB-INF/ShowAddTaches.jsp").forward(request, response);
+
 
     }
 }

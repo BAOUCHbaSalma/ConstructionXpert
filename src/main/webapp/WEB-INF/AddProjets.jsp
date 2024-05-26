@@ -91,10 +91,7 @@
             </div>
 
             <div class="searchP">
-                <label id="lb">
-                    <input type="text" placeholder="Search here">
-                    <ion-icon id="iconS" name="search-outline"></ion-icon>
-                </label>
+
             </div>
 
             <div class="profile">
@@ -127,6 +124,10 @@
                     <label for="itemDescription">Description</label>
                     <textarea class="form-control" id="itemDescription" name="itemDescription" placeholder="Entrer description"></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="itemImg">Image</label>
+                    <input type="text" class="form-control" id="itemImg" name="itemImg" value="${Projet.getImg()}" placeholder="Entrer lien image">
+                </div>
                 <button type="submit" class="btn btn-primary">Ajouter</button>
             </form>
         </div>
@@ -147,7 +148,6 @@
         <div class="All-icons">
             <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
             <a class="lien2"><ion-icon name="create-outline"></ion-icon></a>
-            <a href="ShowTaches?id=${Projet.getIdProjet()}" class="lien3"><ion-icon name="add-circle-outline"></ion-icon></a>
             <a href="ShowTachesProjet?id=${Projet.getIdProjet()}" class="lien4"><ion-icon name="eye-outline"></ion-icon></a>
         </div>
              <div class="modifierSection">
@@ -174,6 +174,10 @@
                          <div class="form-group">
                              <label for="itemDescription">Description</label>
                              <textarea class="form-control" id="itemDescription" name="itemDescription" placeholder="Entrer description">${Projet.getDescriptionProjet()}</textarea>
+                         </div>
+                         <div class="form-group">
+                             <label for="itemImg">Image</label>
+                             <input type="text" class="form-control" id="itemImg" name="itemImg" value="${Projet.getImg()}" placeholder="Entrer lien image">
                          </div>
                          <button type="submit" class="btn btn-primary">Modifier</button>
                      </form>

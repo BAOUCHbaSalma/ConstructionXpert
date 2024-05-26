@@ -10,10 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16116516-90a5-4c15-a3c2-374ce8f79146" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DetailsRessources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/detailesRessources.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/ProjetsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/ProjetsDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/beans/Projets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/beans/Projets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/AddProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/AddProjet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTaches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTaches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTachesProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTachesProjet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateProjet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Acceuil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Acceuil.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddProjets.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddProjets.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAddTaches.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAddTaches.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +177,7 @@
       <workItem from="1716219059664" duration="8845000" />
       <workItem from="1716243351716" duration="4061000" />
       <workItem from="1716281007864" duration="121956000" />
-      <workItem from="1716712570494" duration="24209000" />
+      <workItem from="1716712570494" duration="28212000" />
     </task>
     <servers />
   </component>
@@ -184,11 +190,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTaches.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateTache.java</url>
           <line>26</line>

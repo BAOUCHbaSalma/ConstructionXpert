@@ -95,31 +95,32 @@
           </div>
       </div>
       <section class="sectionAddTache">
-          <button class="AddTache btn btn-outline-primary">Add Project</button>
+          <button class="AddTache btn btn-outline-primary">Add Task</button>
           <div class="generalFormTach">
               <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
-              <form action="add" method="post" class="mb-4">
-                  <input type="hidden" name="itemId">
+              <form action="ShowTachesProjet" method="post" class="card p-4">
+
                   <div class="form-group">
-                      <label for="itemName">Nom du projet</label>
-                      <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                      <label>Description</label>
+                      <input type="text" name="descriptionTache" class="form-control" placeholder="Entrer Description">
                   </div>
                   <div class="form-group">
-                      <label for="itemDateDebut">Date de début</label>
-                      <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                      <label>Date Debut</label>
+                      <input type="date" name="DateDebutTache" class="form-control" placeholder="Entrer Date Debut">
                   </div>
                   <div class="form-group">
-                      <label for="itemDateFin">Date de fin</label>
-                      <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                      <label>Date Fin</label>
+                      <input type="date" name="DateFinTache" class="form-control" placeholder="Entrer Date Fin">
                   </div>
                   <div class="form-group">
-                      <label for="itemBudget">Budget</label>
-                      <input type="number" class="form-control" id="itemBudget" name="itemBudget"  placeholder="Entrer budget">
+                      <label>Statut Tache</label>
+                      <select name="statusTasks">
+                          <option value="En cours">En cours</option>
+                          <option value="Terminee">Terminee</option>
+                          <option value="Bloquee">Bloquee</option>
+                      </select>
                   </div>
-                  <div class="form-group">
-                      <label for="itemDescription">Description</label>
-                      <textarea class="form-control" id="itemDescription" name="itemDescription" placeholder="Entrer description"></textarea>
-                  </div>
+                      <input type="hidden" name="idProjet" value="${id}">
                   <button type="submit" class="btn btn-primary">Ajouter</button>
               </form>
           </div>

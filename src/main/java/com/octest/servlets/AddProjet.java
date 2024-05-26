@@ -39,7 +39,8 @@ public class AddProjet extends HttpServlet {
         Date itemDateDebut=Date.valueOf(request.getParameter("itemDateDebut"));
         Date itemDateFin=Date.valueOf(request.getParameter("itemDateFin"));
         String itemDescription=request.getParameter("itemDescription");
-        Projets projet=new Projets(NameProjet,itemDescription,itemDateDebut,itemDateFin,itemBudget);
+        String itemImg=request.getParameter("itemImg");
+        Projets projet=new Projets(NameProjet,itemDescription,itemDateDebut,itemDateFin,itemBudget,itemImg);
         try {
             pr.AddProjet(projet);
         } catch (SQLException e) {

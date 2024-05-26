@@ -20,6 +20,15 @@ public class Projets {
         this.img = img;
     }
 
+    public Projets(String nomProjet, String descriptionProjet, Date dateDebutP, Date dateFinP, Integer budgetProjet, String img) {
+        this.nomProjet = nomProjet;
+        this.descriptionProjet = descriptionProjet;
+        this.dateDebutP = dateDebutP;
+        this.dateFinP = dateFinP;
+        BudgetProjet = budgetProjet;
+        this.img = img;
+    }
+
     public Projets(String nomProjet, String descriptionProjet, Date dateDebutP, Date dateFinP, Integer budgetProjet) {
         this.nomProjet = nomProjet;
         this.descriptionProjet = descriptionProjet;

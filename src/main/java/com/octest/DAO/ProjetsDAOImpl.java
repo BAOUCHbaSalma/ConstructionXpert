@@ -37,13 +37,14 @@ public class ProjetsDAOImpl implements ProjetsDAO{
     @Override
     public void AddProjet(Projets Projet) throws SQLException, ClassNotFoundException {
 
-        String sql = "INSERT INTO projet (nomProjet,descriptionProjet, dateDebutProjet,dateFinProjet,Budget) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO projet (nomProjet,descriptionProjet, dateDebutProjet,dateFinProjet,Budget,Img) VALUES (?,?,?,?,?,?)";
         PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sql);
         s.setString(1,Projet.getNomProjet() );
         s.setString(2,Projet.getDescriptionProjet() );
         s.setDate(3,Projet.getDateDebutP());
         s.setDate(4,Projet.getDateFinP() );
         s.setInt(5,Projet.getBudgetProjet() );
+        s.setString(6,Projet.getImg());
         s.executeUpdate();
 
     }
@@ -83,14 +84,15 @@ public class ProjetsDAOImpl implements ProjetsDAO{
 
     @Override
     public void UpdateProjet(Integer idProjet, Projets Projet) throws SQLException, ClassNotFoundException {
-        String sqls = "UPDATE projet SET nomProjet=?,descriptionProjet=?, dateDebutProjet=?,dateFinProjet=?,Budget=? WHERE idProjet=?";
+        String sqls = "UPDATE projet SET nomProjet=?,descriptionProjet=?, dateDebutProjet=?,dateFinProjet=?,Budget=?,Img=? WHERE idProjet=?";
         PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sqls);
         s.setString(1,Projet.getNomProjet() );
         s.setString(2,Projet.getDescriptionProjet() );
         s.setDate(3,Projet.getDateDebutP());
         s.setDate(4,Projet.getDateFinP() );
         s.setInt(5,Projet.getBudgetProjet());
-        s.setInt(6,idProjet);
+        s.setString(6,Projet.getImg());
+        s.setInt(7,idProjet);
         s.executeUpdate();
 
     }
