@@ -97,7 +97,7 @@
 
       <div class="main-wrapper">
           <div class="afaire">
-              <h2><em>En cours</em></h2>
+                  <h2><em>En cours</em></h2>
               <div class="tasK-wrapper">
                   <div class="TaskF">
                       <c:forEach var="tache" items="${TacheE}">

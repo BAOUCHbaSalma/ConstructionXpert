@@ -21,6 +21,14 @@ public class DeleteProjet extends HttpServlet {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        ProjetsDAOImpl prt=new ProjetsDAOImpl();
+        try {
+            request.setAttribute("Projets",prt.ShowProjet());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         this.getServletContext().getRequestDispatcher("/WEB-INF/AddProjets.jsp").forward(request, response);
     }
 

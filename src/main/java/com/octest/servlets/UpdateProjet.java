@@ -28,6 +28,7 @@ public class UpdateProjet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         ProjetsDAOImpl pr=new ProjetsDAOImpl();
         Integer id=Integer.valueOf(request.getParameter("itemId"));
         String NameProjet=request.getParameter("itemName");
@@ -43,6 +44,15 @@ public class UpdateProjet extends HttpServlet {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        ProjetsDAOImpl prt=new ProjetsDAOImpl();
+        try {
+            request.setAttribute("Projets",prt.ShowProjet());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         this.getServletContext().getRequestDispatcher("/WEB-INF/AddProjets.jsp").forward(request, response);
     }
 }
