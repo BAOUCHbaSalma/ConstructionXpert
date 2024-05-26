@@ -96,55 +96,136 @@
       </div>
 
       <div class="main-wrapper">
-        <div class="afaire">
-        <H2>A faire</H2>
+          <div class="afaire">
+              <h2><em>En cours</em></h2>
+              <div class="tasK-wrapper">
+                  <div class="TaskF">
+                      <c:forEach var="tache" items="${TacheE}">
+                          <div class="task">
+                              <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                              <div class="taskD1">
+                                  <div>
+                                      <p>${tache.getDateDebutTache()}</p>
+                                      <p>-----></p>
+                                      <p>${tache.getDateFinTache()}</p>
+                                  </div>
+                                  <button id="btn-resource" class="btn-resource">
+                                      <span>Resource</span><br>
+                                      <ion-icon id="res" name="construct-outline"></ion-icon>
+                                  </button>
+                              </div>
+                              <div class="resourceP" id="resourceP">
+                                  <div class="resourceControls" id="resourceControls">
+                                      <button class="close"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                  </div>
 
-            <div class="TaskF">
-                <c:forEach var="tache" items="${Tache}">
-                <div class="task">
-                    <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
-                   <div class="taskD1">
-                       <div>
-                           <p>${tache.getDateDebutTache()}</p>
-                           <p>-----></p>
-                           <p>${tache.getDateFinTache()}</p>
-                       </div>
-                       <button id="btn-resource" class="btn-resource">
-                           <span>Resource</span><br>
-                           <ion-icon id="res" name="construct-outline"></ion-icon>
-                       </button>
-                   </div>
-                    <div class="resourceP">
-                        <div class="resourceControls">
-                            <button class="close"><ion-icon name="close-circle-outline"></ion-icon></button>
-                        </div>
+                                  <div class="RP">
 
-                        <div class="RP">
+                                      <div class="img-resource">
+                                          <c:forEach var="ressource" items="${tache.getRessource()}">
+                                              <div class="mini-img-resource ">
+                                                  <img src="${ressource.getImg()}" width="100%" />
+                                                  <p>${ressource.getNomRessource()}</p>
+                                              </div>
+                                          </c:forEach>
+                                      </div>
 
-                            <div class="img-resource">
-                                <c:forEach var="ressource" items="${tache.getRessource()}">
-                                <div class="mini-img-resource ">
-                                    <img src="${ressource.getImg()}" width="100%" />
-                                    <p>${ressource.getNomRessource()}</p>
-                                </div>
-                                </c:forEach>
-                            </div>
+                                  </div>
 
-                        </div>
+                              </div>
+                          </div>
+                      </c:forEach>
+                  </div>
+              </div>
 
-                    </div>
-                </div>
-                </c:forEach>
-            </div>
+          </div>
 
-        </div>
+          <div class="afaire">
+              <h2><em>Bloquee</em></h2>
+              <div class="tasK-wrapper">
+                  <div class="TaskF">
+                      <c:forEach var="tache" items="${TacheB}">
+                          <div class="task">
+                              <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                              <div class="taskD1">
+                                  <div>
+                                      <p>${tache.getDateDebutTache()}</p>
+                                      <p>-----></p>
+                                      <p>${tache.getDateFinTache()}</p>
+                                  </div>
+                                  <button id="btn-resource" class="btn-resource">
+                                      <span>Resource</span><br>
+                                      <ion-icon id="res" name="construct-outline"></ion-icon>
+                                  </button>
+                              </div>
+                              <div class="resourceP" id="resourceP">
+                                  <div class="resourceControls" id="resourceControls">
+                                      <button class="close"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                  </div>
 
-        <div class="encours">
-            <H2>A faire</H2>
-        </div>
-        <div class="termine">
-            <H2>A faire</H2>
-        </div>
+                                  <div class="RP">
+
+                                      <div class="img-resource">
+                                          <c:forEach var="ressource" items="${tache.getRessource()}">
+                                              <div class="mini-img-resource ">
+                                                  <img src="${ressource.getImg()}" width="100%" />
+                                                  <p>${ressource.getNomRessource()}</p>
+                                              </div>
+                                          </c:forEach>
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                          </div>
+                      </c:forEach>
+                  </div>
+              </div>
+
+          </div>
+          <div class="afaire">
+              <h2><em>Termine</em></h2>
+              <div class="tasK-wrapper">
+                  <div class="TaskF">
+                      <c:forEach var="tache" items="${TacheT}">
+                          <div class="task">
+                              <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
+                              <div class="taskD1">
+                                  <div>
+                                      <p>${tache.getDateDebutTache()}</p>
+                                      <p>-----></p>
+                                      <p>${tache.getDateFinTache()}</p>
+                                  </div>
+                                  <button id="btn-resource" class="btn-resource">
+                                      <span>Resource</span><br>
+                                      <ion-icon id="res" name="construct-outline"></ion-icon>
+                                  </button>
+                              </div>
+                              <div class="resourceP" id="resourceP">
+                                  <div class="resourceControls" id="resourceControls">
+                                      <button class="close"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                  </div>
+
+                                  <div class="RP">
+
+                                      <div class="img-resource">
+                                          <c:forEach var="ressource" items="${tache.getRessource()}">
+                                              <div class="mini-img-resource ">
+                                                  <img src="${ressource.getImg()}" width="100%" />
+                                                  <p>${ressource.getNomRessource()}</p>
+                                              </div>
+                                          </c:forEach>
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                          </div>
+                      </c:forEach>
+                  </div>
+              </div>
+
+          </div>
     </div>
 </div>
 </div>

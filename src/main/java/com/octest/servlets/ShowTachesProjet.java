@@ -22,9 +22,14 @@ public class ShowTachesProjet extends HttpServlet {
 
         TachesDAOImpl ta=new TachesDAOImpl();
         try {
-            ArrayList<Taches> tache = ta.TacheRessources(id);
-            tache.forEach(System.out::println);
-            request.setAttribute("Tache",tache);
+            ArrayList<Taches> tacheT = ta.TacheTRessources(id);
+            request.setAttribute("TacheT",tacheT);
+
+            ArrayList<Taches> tacheB = ta.TacheBRessourcesB(id);
+            request.setAttribute("TacheB",tacheB);
+
+            ArrayList<Taches> tacheE = ta.TacheERessources(id);
+            request.setAttribute("TacheE",tacheE);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

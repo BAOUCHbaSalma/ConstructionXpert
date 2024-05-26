@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface RessourcesDAO {
-    ArrayList<Ressources> ShowRessources(Integer idTache) throws SQLException, ClassNotFoundException;
+
     ArrayList<Ressources> ShowRessources() throws SQLException, ClassNotFoundException;
     void AddRessources(Projets Projet) throws SQLException, ClassNotFoundException;
     void DeleteRessource(Integer idRessource) throws SQLException, ClassNotFoundException;

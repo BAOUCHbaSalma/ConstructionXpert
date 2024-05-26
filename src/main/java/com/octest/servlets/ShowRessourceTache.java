@@ -12,16 +12,6 @@ import java.sql.SQLException;
 public class ShowRessourceTache extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer id=Integer.valueOf(request.getParameter("id"));
-        RessourcesDAOImpl Rc=new RessourcesDAOImpl();
-        try {
-            request.setAttribute("Ressources",Rc.ShowRessources(id));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        this.getServletContext().getRequestDispatcher("/WEB-INF/ShowRessource.jsp").forward(request, response);
 
     }
 

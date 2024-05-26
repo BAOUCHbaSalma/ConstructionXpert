@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class TachesDAOImpl implements TachesDAO{
+
     @Override
     public ArrayList<Taches> ShowTaches(Integer idProjet) throws SQLException, ClassNotFoundException {
         ArrayList<Taches> taches=new ArrayList<>();
@@ -33,6 +34,7 @@ public class TachesDAOImpl implements TachesDAO{
         }
         return taches;
     }
+
 
     @Override
     public void AddTaches(Taches Tache) throws SQLException, ClassNotFoundException {
@@ -90,10 +92,11 @@ public class TachesDAOImpl implements TachesDAO{
     }
 
     @Override
-    public ArrayList<Taches> TacheRessources(Integer idProjet) throws SQLException, ClassNotFoundException {
-        String sql="SELECT * FROM tache WHERE idProjet=?";
+    public ArrayList<Taches> TacheTRessources(Integer idProjet) throws SQLException, ClassNotFoundException {
+        String sql="SELECT * FROM tache WHERE idProjet=? AND statutTache=?";
         PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sql);
         s.setInt(1,idProjet);
+        s.setString(2,"Terminee");
         ResultSet resultat = s.executeQuery();
          ArrayList<Taches> tache=new ArrayList<>();
         while (resultat.next()) {
@@ -126,6 +129,92 @@ public class TachesDAOImpl implements TachesDAO{
 
 
            t.setRessource(rr);
+            tache.add(t);
+        }
+        return tache;
+    }
+
+    @Override
+    public ArrayList<Taches> TacheBRessourcesB(Integer idProjet) throws SQLException, ClassNotFoundException {
+        String sql="SELECT * FROM tache WHERE idProjet=? AND statutTache=?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sql);
+        s.setInt(1,idProjet);
+        s.setString(2,"Bloquee");
+        ResultSet resultat = s.executeQuery();
+        ArrayList<Taches> tache=new ArrayList<>();
+        while (resultat.next()) {
+            Integer idTache = resultat.getInt("idTache");
+            String descriptionTache=resultat.getString("descriptionTache");
+            Date dateDebutTache = resultat.getDate("dateDebutTache");
+            Date dateFinTache = resultat.getDate("dateFinTache");
+            String statutTache = resultat.getString("statutTache");
+            Taches t=new Taches();
+            t.setIdTache(idTache);
+            t.setStatutTache(statutTache);
+            t.setDescription(descriptionTache);
+            t.setDateDebutTache(dateDebutTache);
+            t.setDateFinTache(dateFinTache);
+            String sqls="SELECT * FROM ressource WHERE idTache=?";
+            PreparedStatement r=ConnectionDAO.getConnection().prepareStatement(sqls);
+            r.setInt(1,idTache);
+            ResultSet resultatt=r.executeQuery();
+            ArrayList<Ressources> rr=new ArrayList<>();
+            while(resultatt.next()) {
+                Integer idRessource=resultatt.getInt("idRessource");
+                String nomRessource=resultatt.getString("nomRessource");
+                String typeRessource = resultatt.getString("typeRessource");
+                Integer quantiteRessource = resultatt.getInt("quantiteRessource");
+                String infoFournisseur = resultatt.getString("infoFournisseur");
+                String img = resultatt.getString("Img");
+                Ressources rss=new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,img);
+                rr.add(rss);
+            }
+
+
+            t.setRessource(rr);
+            tache.add(t);
+        }
+        return tache;
+    }
+
+    @Override
+    public ArrayList<Taches> TacheERessources(Integer idProjet) throws SQLException, ClassNotFoundException {
+        String sql="SELECT * FROM tache WHERE idProjet=? AND statutTache=?";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sql);
+        s.setInt(1,idProjet);
+        s.setString(2,"En cours");
+        ResultSet resultat = s.executeQuery();
+        ArrayList<Taches> tache=new ArrayList<>();
+        while (resultat.next()) {
+            Integer idTache = resultat.getInt("idTache");
+            String descriptionTache=resultat.getString("descriptionTache");
+            Date dateDebutTache = resultat.getDate("dateDebutTache");
+            Date dateFinTache = resultat.getDate("dateFinTache");
+            String statutTache = resultat.getString("statutTache");
+            Taches t=new Taches();
+            t.setIdTache(idTache);
+            t.setStatutTache(statutTache);
+            t.setDescription(descriptionTache);
+            t.setDateDebutTache(dateDebutTache);
+            t.setDateFinTache(dateFinTache);
+            String sqls="SELECT * FROM ressource WHERE idTache=?";
+            PreparedStatement r=ConnectionDAO.getConnection().prepareStatement(sqls);
+            r.setInt(1,idTache);
+            ResultSet resultatt=r.executeQuery();
+            ArrayList<Ressources> rr=new ArrayList<>();
+            while(resultatt.next()) {
+                Integer idRessource=resultatt.getInt("idRessource");
+                String nomRessource=resultatt.getString("nomRessource");
+                String typeRessource = resultatt.getString("typeRessource");
+                Integer quantiteRessource = resultatt.getInt("quantiteRessource");
+                String infoFournisseur = resultatt.getString("infoFournisseur");
+                String img = resultatt.getString("Img");
+                Ressources rss=new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,img);
+                rr.add(rss);
+            }
+
+
+            t.setRessource(rr);
             tache.add(t);
         }
         return tache;

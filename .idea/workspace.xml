@@ -11,6 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="16116516-90a5-4c15-a3c2-374ce8f79146" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/TachesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/TachesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/TachesDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/TachesDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowRessourceTache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowRessourceTache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTachesProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTachesProjet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAddTaches.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAddTaches.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/style.css" afterDir="false" />
     </list>
@@ -169,7 +175,7 @@
       <workItem from="1716210170915" duration="6060000" />
       <workItem from="1716219059664" duration="8845000" />
       <workItem from="1716243351716" duration="4061000" />
-      <workItem from="1716281007864" duration="108393000" />
+      <workItem from="1716281007864" duration="115607000" />
     </task>
     <servers />
   </component>
@@ -193,13 +199,8 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAOImpl.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/octest/DAO/TachesDAOImpl.java</url>
-          <line>116</line>
+          <line>119</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
