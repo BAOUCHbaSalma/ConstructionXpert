@@ -894,7 +894,35 @@ body {
     width: 300px;
     display: none;
 }
-
+.close-add{
+    border: none;
+}
+.AddRessourceT{
+    width: 300px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 7px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.37);
+    z-index: 3673;
+    display: none;
+}
+.AddRessourceT > .close-addR{
+    padding: 10px;
+    background: transparent;
+    border: none;
+}
+.AddRessourceT > form{
+    padding: 10px 20px;
+    text-align: left;
+}
+.AddRessourceT > form > select{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
 ::-webkit-scrollbar {
     width: 3px;
     height:3px;

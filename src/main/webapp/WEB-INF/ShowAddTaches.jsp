@@ -135,8 +135,45 @@
                                   <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
                                   <div class="icons-tache">
                                       <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
-                                      <a class="lien2"><ion-icon name="create-outline"></ion-icon></a>
-                                      <a href="ShowTaches?id=${Projet.getIdProjet()}" class="lien3"><ion-icon name="add-circle-outline"></ion-icon></a>
+                                      <a class="lien3"><ion-icon name="create-outline"></ion-icon></a>
+                                      <a class="lien2"><ion-icon name="add-circle-outline"></ion-icon></a>
+                                  </div>
+                                  <div class="modifieTach">
+                                      <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                      <form action="add" method="post" class="mb-4">
+                                          <input type="hidden" name="itemId">
+                                          <div class="form-group">
+                                              <label for="itemName">Nom du projet</label>
+                                              <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="itemDateDebut">Date de début</label>
+                                              <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="itemDateFin">Date de fin</label>
+                                              <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                                          </div>
+                                          <select class="form-select" aria-label="Default select example" name="status">
+                                              <option selected>Open this select menu</option>
+                                              <option value="En cours">En cours</option>
+                                              <option value="Bloquee">Bloquee</option>
+                                              <option value="Terminee">Terminee</option>
+                                          </select>
+                                          <button type="submit" class="btn btn-primary">Ajouter</button>
+                                      </form>
+                                  </div>
+                                  <div class="AddRessourceT">
+                                      <button class="close-addR"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                      <form action="add" method="post" class="mb-4">
+                                          <select class="form-select" aria-label="Default select example" name="status">
+                                              <option selected>Open this select menu</option>
+                                              <option value="En cours">En cours</option>
+                                              <option value="Bloquee">Bloquee</option>
+                                              <option value="Terminee">Terminee</option>
+                                          </select><br>
+                                          <button type="submit" class="btn btn-outline-dark">Ajouter</button>
+                                      </form>
                                   </div>
                               </div>
                               <div class="taskD1">
@@ -186,8 +223,8 @@
                                   <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
                                   <div class="icons-tache">
                                       <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
-                                      <a class="lien2"><ion-icon name="create-outline"></ion-icon></a>
-                                      <a class="lien3"><ion-icon name="add-circle-outline"></ion-icon></a>
+                                      <a class="lien3"><ion-icon name="create-outline"></ion-icon></a>
+                                      <a class="lien2"><ion-icon name="add-circle-outline"></ion-icon></a>
                                   </div>
                                   <div class="modifieTach">
                                       <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
@@ -212,6 +249,18 @@
                                               <option value="Terminee">Terminee</option>
                                           </select>
                                           <button type="submit" class="btn btn-primary">Ajouter</button>
+                                      </form>
+                                  </div>
+                                  <div class="AddRessourceT">
+                                      <button class="close-addR"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                      <form action="add" method="post" class="mb-4">
+                                          <select class="form-select" aria-label="Default select example" name="status">
+                                              <option selected>Open this select menu</option>
+                                              <option value="En cours">En cours</option>
+                                              <option value="Bloquee">Bloquee</option>
+                                              <option value="Terminee">Terminee</option>
+                                          </select><br>
+                                          <button type="submit" class="btn btn-outline-dark">Ajouter</button>
                                       </form>
                                   </div>
                               </div>
@@ -261,10 +310,46 @@
                                   <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
                                   <div class="icons-tache">
                                       <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
-                                      <a class="lien2"><ion-icon name="create-outline"></ion-icon></a>
-                                      <a href="ShowTaches?id=${Projet.getIdProjet()}" class="lien3"><ion-icon name="add-circle-outline"></ion-icon></a>
+                                      <a class="lien3"><ion-icon name="create-outline"></ion-icon></a>
+                                      <a class="lien2"><ion-icon name="add-circle-outline"></ion-icon></a>
                                   </div>
-
+                                  <div class="modifieTach">
+                                      <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                      <form action="add" method="post" class="mb-4">
+                                          <input type="hidden" name="itemId">
+                                          <div class="form-group">
+                                              <label for="itemName">Nom du projet</label>
+                                              <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="itemDateDebut">Date de début</label>
+                                              <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="itemDateFin">Date de fin</label>
+                                              <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                                          </div>
+                                          <select class="form-select" aria-label="Default select example" name="status">
+                                              <option selected>Open this select menu</option>
+                                              <option value="En cours">En cours</option>
+                                              <option value="Bloquee">Bloquee</option>
+                                              <option value="Terminee">Terminee</option>
+                                          </select>
+                                          <button type="submit" class="btn btn-primary">Ajouter</button>
+                                      </form>
+                                  </div>
+                                  <div class="AddRessourceT">
+                                      <button class="close-addR"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                      <form action="add" method="post" class="mb-4">
+                                          <select class="form-select" aria-label="Default select example" name="status">
+                                              <option selected>Open this select menu</option>
+                                              <option value="En cours">En cours</option>
+                                              <option value="Bloquee">Bloquee</option>
+                                              <option value="Terminee">Terminee</option>
+                                          </select><br>
+                                          <button type="submit" class="btn btn-outline-dark">Ajouter</button>
+                                      </form>
+                                  </div>
                               </div>
                               <div class="taskD1">
                                   <div>
@@ -333,6 +418,26 @@
             })
             popup2.forEach(p =>{
                 const close = p.querySelector(".close-add");
+                close.addEventListener("click" , ()=>{
+                    popup.style.display = "none";
+                })
+            })
+        })
+    })
+    document.querySelectorAll(".task").forEach(T =>{
+        const iconsT = T.querySelectorAll(".iconsT");
+        iconsT.forEach(e =>{
+            const popup = e.querySelector(".AddRessourceT");
+            const popup2 = e.querySelectorAll(".AddRessourceT");
+            const iconsTache = e.querySelectorAll(".icons-tache");
+            iconsTache.forEach(i =>{
+                const lien2 = i.querySelector(".lien2");
+                lien2.addEventListener("click", ()=>{
+                    popup.style.display = "block";
+                })
+            })
+            popup2.forEach(p =>{
+                const close = p.querySelector(".close-addR");
                 close.addEventListener("click" , ()=>{
                     popup.style.display = "none";
                 })
