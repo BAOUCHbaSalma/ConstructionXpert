@@ -36,7 +36,15 @@ public class RessourcesDAOImpl implements RessourcesDAO{
     }
 
     @Override
-    public void AddRessources(Projets Projet) throws SQLException, ClassNotFoundException {
+    public void AddRessources(Ressources Ressource) throws SQLException, ClassNotFoundException {
+        String sqls = "INSERT INTO ressource (nomRessource,typeRessource, quantiteRessource,infoFournisseur,Img) VALUES (?,?,?,?,?)";
+        PreparedStatement s = ConnectionDAO.getConnection().prepareStatement(sqls);
+        s.setString(1,Ressource.getNomRessource());
+        s.setString(2,Ressource.getTypeRessource());
+        s.setInt(3,Ressource.getQuantiteRoussource());
+        s.setString(4,Ressource.getInfoFournisseur());
+        s.setString(5,Ressource.getImg());
+        s.executeUpdate();
 
     }
 
@@ -62,7 +70,8 @@ public class RessourcesDAOImpl implements RessourcesDAO{
             Integer quantiteRessource = resultat.getInt("quantiteRessource");
             String infoFournisseur = resultat.getString("infoFournisseur");
             Integer idTache=resultat.getInt("idTache");
-            rc = new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,idTache);
+            String img=resultat.getString("Img");
+            rc = new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,img,idTache);
 
         }
         return rc;

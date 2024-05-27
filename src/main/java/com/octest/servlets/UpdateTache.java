@@ -1,5 +1,6 @@
 package com.octest.servlets;
 
+import com.octest.DAO.RessourcesDAOImpl;
 import com.octest.DAO.TachesDAOImpl;
 import com.octest.beans.Taches;
 
@@ -9,6 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @WebServlet(name = "UpdateTache", value = "/UpdateTache")
 public class UpdateTache extends HttpServlet {
@@ -36,8 +38,8 @@ public class UpdateTache extends HttpServlet {
         Date DateDebutTache= Date.valueOf(request.getParameter("DateDebutTache"));
         Date DateFinTache=Date.valueOf(request.getParameter("DateFinTache"));
         String descriptionTache=request.getParameter("descriptionTache");
-        Integer idProjet=Integer.valueOf(request.getParameter("idProjet"));
-        Taches th=new Taches(idTache,descriptionTache,DateDebutTache,DateFinTache,StatutTache,idProjet);
+        Integer id=Integer.valueOf(request.getParameter("idProjet"));
+        Taches th=new Taches(idTache,descriptionTache,DateDebutTache,DateFinTache,StatutTache,id);
         TachesDAOImpl td=new TachesDAOImpl();
         try {
             td.UpdateTache(idTache,th);
@@ -48,12 +50,29 @@ public class UpdateTache extends HttpServlet {
         }
         TachesDAOImpl ta=new TachesDAOImpl();
         try {
-            request.setAttribute("Tache",ta.ShowTaches(idProjet));
+            ArrayList<Taches> tacheT = ta.TacheTRessources(id);
+            request.setAttribute("TacheT",tacheT);
+
+            ArrayList<Taches> tacheB = ta.TacheBRessourcesB(id);
+            request.setAttribute("TacheB",tacheB);
+
+            ArrayList<Taches> tacheE = ta.TacheERessources(id);
+            request.setAttribute("TacheE",tacheE);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        RessourcesDAOImpl ress=new RessourcesDAOImpl();
+        try {
+            request.setAttribute("ress",ress.ShowRessources());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         this.getServletContext().getRequestDispatcher("/WEB-INF/ShowAddTaches.jsp").forward(request, response);
 
     }

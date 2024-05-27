@@ -10,16 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16116516-90a5-4c15-a3c2-374ce8f79146" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Diagrammes/Diagramme de use case.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Diagrammes/diagramme de classe constuction.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/AddRessource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/AssocierRessource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/ProjetsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/ProjetsDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/beans/Projets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/beans/Projets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/AddProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/AddProjet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTaches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTaches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/beans/Ressources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/beans/Ressources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DeleteRessource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DeleteRessource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DeleteTache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DeleteTache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DetailsRessources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/DetailsRessources.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTachesProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTachesProjet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateProjet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateProjet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateRessourceTache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateRessourceTache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateTache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateTache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Acceuil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Acceuil.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddProjets.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddProjets.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAddTaches.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAddTaches.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAllRessource.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ShowAllRessource.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/detailesRessources.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/detailesRessources.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +187,7 @@
       <workItem from="1716219059664" duration="8845000" />
       <workItem from="1716243351716" duration="4061000" />
       <workItem from="1716281007864" duration="121956000" />
-      <workItem from="1716712570494" duration="28212000" />
+      <workItem from="1716712570494" duration="51983000" />
     </task>
     <servers />
   </component>
@@ -192,7 +202,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateTache.java</url>
-          <line>26</line>
+          <line>28</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -200,9 +210,29 @@
           <line>119</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/octest/servlets/ShowTachesProjet.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateRessourceTache.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/octest/DAO/RessourcesDAOImpl.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/detailesRessources.jsp</url>
+          <line>148</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/octest/servlets/UpdateTache.java</url>
-          <line>31</line>
+          <line>33</line>
           <properties class="com.octest.servlets.UpdateTache" method="doPost">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

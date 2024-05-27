@@ -118,7 +118,7 @@
                           <option value="En cours">En cours</option>
                           <option value="Terminee">Terminee</option>
                           <option value="Bloquee">Bloquee</option>
-                      </select>
+                      </select><br>
                   </div>
                       <input type="hidden" name="idProjet" value="${id}">
                   <button type="submit" class="btn btn-primary">Ajouter</button>
@@ -135,44 +135,47 @@
                               <div class="iconsT">
                                   <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
                                   <div class="icons-tache">
-                                      <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
+                                      <a href="DeleteTache?idT=${tache.getIdTache()}&id=${id}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
                                       <a class="lien3"><ion-icon name="create-outline"></ion-icon></a>
                                       <a class="lien2"><ion-icon name="add-circle-outline"></ion-icon></a>
                                   </div>
                                   <div class="modifieTach">
                                       <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
-                                      <form action="add" method="post" class="mb-4">
-                                          <input type="hidden" name="itemId">
+                                      <form action="UpdateTache" method="post" class="mb-4">
+                                          <input type="hidden" name="idTache" value="${tache.getIdTache()}">
                                           <div class="form-group">
-                                              <label for="itemName">Nom du projet</label>
-                                              <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                                              <label for="descriptionTache">Description</label>
+                                              <input type="text" class="form-control" id="descriptionTache" name="descriptionTache" value="${tache.getDescription()}" placeholder="Entrer description du tache">
                                           </div>
                                           <div class="form-group">
-                                              <label for="itemDateDebut">Date de début</label>
-                                              <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                                              <label for="DateDebutTache">Date de début</label>
+                                              <input type="date" class="form-control" id="DateDebutTache" value="${tache.getDateDebutTache()}" name="DateDebutTache">
                                           </div>
                                           <div class="form-group">
-                                              <label for="itemDateFin">Date de fin</label>
-                                              <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                                              <label for="DateFinTache">Date de fin</label>
+                                              <input type="date" class="form-control" id="DateFinTache" value="${tache.getDateFinTache()}" name="DateFinTache" >
                                           </div>
-                                          <select class="form-select" aria-label="Default select example" name="status">
+                                          <select class="form-select" aria-label="Default select example" value="${tache.getStatutTache()}" name="StatutTache">
                                               <option selected>Open this select menu</option>
                                               <option value="En cours">En cours</option>
                                               <option value="Bloquee">Bloquee</option>
                                               <option value="Terminee">Terminee</option>
                                           </select>
-                                          <button type="submit" class="btn btn-primary">Ajouter</button>
+                                          <input type="hidden" name="idProjet" value="${id}">
+                                          <button type="submit" class="btn btn-primary">Update</button>
                                       </form>
                                   </div>
                                   <div class="AddRessourceT">
                                       <button class="close-addR"><ion-icon name="close-circle-outline"></ion-icon></button>
-                                      <form action="add" method="post" class="mb-4">
-                                          <select class="form-select" aria-label="Default select example" name="status">
-                                              <option selected>Open this select menu</option>
-                                              <option value="En cours">En cours</option>
-                                              <option value="Bloquee">Bloquee</option>
-                                              <option value="Terminee">Terminee</option>
+                                      <form action="AssocierRessource" method="post" class="mb-4">
+                                            <input type="hidden" name="idT" value="${tache.getIdTache()}">
+                                          <input type="hidden" name="idProjet" value="${id}">
+                                          <select class="form-select" aria-label="Default select example" name="ressource">
+                                              <c:forEach var="ress" items="${ress}">
+                                              <option value="${ress.getIdRessource()}">${ress.getNomRessource()}</option>
+                                              </c:forEach>
                                           </select><br>
+
                                           <button type="submit" class="btn btn-outline-dark">Ajouter</button>
                                       </form>
                                   </div>
@@ -223,44 +226,47 @@
                               <div class="iconsT">
                                   <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
                                   <div class="icons-tache">
-                                      <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
+                                      <a href="DeleteTache?idT=${tache.getIdTache()}&id=${id}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
                                       <a class="lien3"><ion-icon name="create-outline"></ion-icon></a>
                                       <a class="lien2"><ion-icon name="add-circle-outline"></ion-icon></a>
                                   </div>
                                   <div class="modifieTach">
                                       <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
-                                      <form action="add" method="post" class="mb-4">
-                                          <input type="hidden" name="itemId">
+                                      <form action="UpdateTache" method="post" class="mb-4">
+                                          <input type="hidden" name="idTache" value="${tache.getIdTache()}">
                                           <div class="form-group">
-                                              <label for="itemName">Nom du projet</label>
-                                              <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                                              <label for="descriptionTache">Description</label>
+                                              <input type="text" class="form-control" id="descriptionTache" name="descriptionTache" value="${tache.getDescription()}" placeholder="Entrer description du tache">
                                           </div>
                                           <div class="form-group">
-                                              <label for="itemDateDebut">Date de début</label>
-                                              <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                                              <label for="DateDebutTache">Date de début</label>
+                                              <input type="date" class="form-control" id="DateDebutTache" value="${tache.getDateDebutTache()}" name="DateDebutTache">
                                           </div>
                                           <div class="form-group">
-                                              <label for="itemDateFin">Date de fin</label>
-                                              <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                                              <label for="DateFinTache">Date de fin</label>
+                                              <input type="date" class="form-control" id="DateFinTache" value="${tache.getDateFinTache()}" name="DateFinTache" >
                                           </div>
-                                          <select class="form-select" aria-label="Default select example" name="status">
+                                          <select class="form-select" aria-label="Default select example" value="${tache.getStatutTache()}" name="StatutTache">
                                               <option selected>Open this select menu</option>
                                               <option value="En cours">En cours</option>
                                               <option value="Bloquee">Bloquee</option>
                                               <option value="Terminee">Terminee</option>
                                           </select>
-                                          <button type="submit" class="btn btn-primary">Ajouter</button>
+                                          <input type="hidden" name="idProjet" value="${id}">
+                                          <button type="submit" class="btn btn-primary">Update</button>
                                       </form>
                                   </div>
                                   <div class="AddRessourceT">
                                       <button class="close-addR"><ion-icon name="close-circle-outline"></ion-icon></button>
-                                      <form action="add" method="post" class="mb-4">
-                                          <select class="form-select" aria-label="Default select example" name="status">
-                                              <option selected>Open this select menu</option>
-                                              <option value="En cours">En cours</option>
-                                              <option value="Bloquee">Bloquee</option>
-                                              <option value="Terminee">Terminee</option>
+                                      <form action="AssocierRessource" method="post" class="mb-4">
+                                          <input type="hidden" name="idT" value="${tache.getIdTache()}">
+                                          <input type="hidden" name="idProjet" value="${id}">
+                                          <select class="form-select" aria-label="Default select example" name="ressource">
+                                              <c:forEach var="ress" items="${ress}">
+                                                  <option value="${ress.getIdRessource()}">${ress.getNomRessource()}</option>
+                                              </c:forEach>
                                           </select><br>
+
                                           <button type="submit" class="btn btn-outline-dark">Ajouter</button>
                                       </form>
                                   </div>
@@ -310,44 +316,47 @@
                               <div class="iconsT">
                                   <h2>${tache.getIdTache()}-${tache.getDescription()}</h2>
                                   <div class="icons-tache">
-                                      <a href="DeleteProjet?id=${Projet.getIdProjet()}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
+                                      <a href="DeleteTache?idT=${tache.getIdTache()}&id=${id}" class="lien1"><ion-icon name="trash-outline"></ion-icon></a>
                                       <a class="lien3"><ion-icon name="create-outline"></ion-icon></a>
                                       <a class="lien2"><ion-icon name="add-circle-outline"></ion-icon></a>
                                   </div>
                                   <div class="modifieTach">
                                       <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
-                                      <form action="add" method="post" class="mb-4">
-                                          <input type="hidden" name="itemId">
+                                      <form action="UpdateTache" method="post" class="mb-4">
+                                          <input type="hidden" name="idTache" value="${tache.getIdTache()}">
                                           <div class="form-group">
-                                              <label for="itemName">Nom du projet</label>
-                                              <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                                              <label for="descriptionTache">Description</label>
+                                              <input type="text" class="form-control" id="descriptionTache" name="descriptionTache" value="${tache.getDescription()}" placeholder="Entrer description du tache">
                                           </div>
                                           <div class="form-group">
-                                              <label for="itemDateDebut">Date de début</label>
-                                              <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                                              <label for="DateDebutTache">Date de début</label>
+                                              <input type="date" class="form-control" id="DateDebutTache" value="${tache.getDateDebutTache()}" name="DateDebutTache">
                                           </div>
                                           <div class="form-group">
-                                              <label for="itemDateFin">Date de fin</label>
-                                              <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                                              <label for="DateFinTache">Date de fin</label>
+                                              <input type="date" class="form-control" id="DateFinTache" value="${tache.getDateFinTache()}" name="DateFinTache" >
                                           </div>
-                                          <select class="form-select" aria-label="Default select example" name="status">
+                                          <select class="form-select" aria-label="Default select example" value="${tache.getStatutTache()}" name="StatutTache">
                                               <option selected>Open this select menu</option>
                                               <option value="En cours">En cours</option>
                                               <option value="Bloquee">Bloquee</option>
                                               <option value="Terminee">Terminee</option>
                                           </select>
-                                          <button type="submit" class="btn btn-primary">Ajouter</button>
+                                          <input type="hidden" name="idProjet" value="${id}">
+                                          <button type="submit" class="btn btn-primary">Update</button>
                                       </form>
                                   </div>
                                   <div class="AddRessourceT">
                                       <button class="close-addR"><ion-icon name="close-circle-outline"></ion-icon></button>
-                                      <form action="add" method="post" class="mb-4">
-                                          <select class="form-select" aria-label="Default select example" name="status">
-                                              <option selected>Open this select menu</option>
-                                              <option value="En cours">En cours</option>
-                                              <option value="Bloquee">Bloquee</option>
-                                              <option value="Terminee">Terminee</option>
+                                      <form action="AssocierRessource" method="post" class="mb-4">
+                                          <input type="hidden" name="idT" value="${tache.getIdTache()}">
+                                          <input type="hidden" name="idProjet" value="${id}">
+                                          <select class="form-select" aria-label="Default select example" name="ressource">
+                                              <c:forEach var="ress" items="${ress}">
+                                                  <option value="${ress.getIdRessource()}">${ress.getNomRessource()}</option>
+                                              </c:forEach>
                                           </select><br>
+
                                           <button type="submit" class="btn btn-outline-dark">Ajouter</button>
                                       </form>
                                   </div>
@@ -405,6 +414,7 @@
             popup.style.display = "none";
         });
     });
+
     document.querySelectorAll(".task").forEach(T =>{
         const iconsT = T.querySelectorAll(".iconsT");
         iconsT.forEach(e =>{

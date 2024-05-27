@@ -85,19 +85,23 @@
     </div>
 
     <div class="main" style="width: 100%">
-        <div class="topbarP">
+        <div class="topbar">
             <div class="toggle">
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
 
-            <div class="searchP">
-
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
             </div>
 
-            <div class="profile">
-
+            <div class="user">
+                <img src="assets/imgs/customer01.jpg" alt="">
             </div>
         </div>
+
     <section class="sectionAdd">
         <button class="Add btn btn-outline-primary">Add Project</button>
         <div class="generalForm">
@@ -223,6 +227,7 @@
             popup.style.display = "none";
         });
     });
+
     document.querySelector(".Add").addEventListener("click",()=>{
         document.querySelector(".generalForm").style.display = "flex";
     })

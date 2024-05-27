@@ -37,6 +37,14 @@ public class ShowTachesProjet extends HttpServlet {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        RessourcesDAOImpl ress=new RessourcesDAOImpl();
+        try {
+            request.setAttribute("ress",ress.ShowRessources());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         this.getServletContext().getRequestDispatcher("/WEB-INF/ShowAddTaches.jsp").forward(request, response);
 
     }
@@ -44,6 +52,7 @@ public class ShowTachesProjet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer id=Integer.valueOf(request.getParameter("idProjet"));
+        request.setAttribute("id",id);
         String description=request.getParameter("descriptionTache");
         Date dateDebut=Date.valueOf(request.getParameter("DateDebutTache"));
         Date dateFin=Date.valueOf(request.getParameter("DateFinTache"));
@@ -68,6 +77,14 @@ public class ShowTachesProjet extends HttpServlet {
             ArrayList<Taches> tacheE = ta.TacheERessources(id);
             request.setAttribute("TacheE",tacheE);
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        RessourcesDAOImpl ress=new RessourcesDAOImpl();
+        try {
+            request.setAttribute("ress",ress.ShowRessources());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

@@ -28,12 +28,13 @@ public class UpdateRessourceTache extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer idRessource=Integer.valueOf(request.getParameter("idRessource"));
+        Integer idRessource=Integer.valueOf(request.getParameter("idRessource").trim());
         String nomRessource=request.getParameter("nomRessource");
         String typeRessource=request.getParameter("typeRessource");
-        Integer quantiteRessource=Integer.valueOf(request.getParameter("quantiteRessource"));
+       Integer quantiteRessource=Integer.valueOf(request.getParameter("quantiteRessource"));
         String infoFournisseur=request.getParameter("infoFournisseur");
-        Integer idTache=Integer.valueOf(request.getParameter("idTache"));
+        Integer idTache=Integer.valueOf(request.getParameter("idTache").trim());
+
         Ressources rc=new Ressources(idRessource,nomRessource,typeRessource,quantiteRessource,infoFournisseur,idTache);
         RessourcesDAOImpl re=new RessourcesDAOImpl();
         try {
@@ -43,7 +44,15 @@ public class UpdateRessourceTache extends HttpServlet {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        this.getServletContext().getRequestDispatcher("/WEB-INF/ShowAddTaches.jsp").forward(request, response);
+        RessourcesDAOImpl rcc=new RessourcesDAOImpl();
+        try {
+            request.setAttribute("ressource",rcc.RecupererRessource(idRessource));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        this.getServletContext().getRequestDispatcher("/WEB-INF/detailesRessources.jsp").forward(request, response);
 
     }
 }

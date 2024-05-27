@@ -77,7 +77,22 @@
 
     </div>
     <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
 
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+
+            <div class="user">
+                <img src="assets/imgs/customer01.jpg" alt="">
+            </div>
+        </div>
 
 <div class="titre-cards">
     <h1>Ressource materiel</h1>
@@ -89,6 +104,7 @@
         <c:forEach var="Ressources" items="${Ressources}">
             <div class="cardD">
                 <div>
+                    <a href="DetailsRessources?idR=${Ressources.getIdRessource()}">
                         <img class="card_disney" src="${Ressources.getImg()}"/>
 
                     </a>
@@ -103,6 +119,7 @@
         </c:forEach>
     </div>
 </section>
+
         <div class="titre-cards">
             <h1>Ressource materiel</h1>
         </div>
@@ -113,6 +130,7 @@
                 <c:forEach var="Ressources" items="${Ressources}">
                     <div class="cardD">
                         <div>
+                            <a href="DetailsRessources?idR=${Ressources.getIdRessource()}">
                             <img class="card_disney" src="${Ressources.getImg()}"/>
 
                             </a>
@@ -136,6 +154,7 @@
                 <c:forEach var="Ressources" items="${Ressources}">
                     <div class="cardD">
                         <div>
+                            <a href="DetailsRessources?idR=${Ressources.getIdRessource()}">
                             <img class="card_disney" src="${Ressources.getImg()}"/>
 
                             </a>
@@ -153,6 +172,9 @@
         </section>
     </div>
     </div>
+<script>
+
+</script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

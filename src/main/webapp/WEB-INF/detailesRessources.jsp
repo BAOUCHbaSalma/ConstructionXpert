@@ -103,93 +103,103 @@
             <button class="AddTache btn btn-outline-primary">Add Resource</button>
             <div class="generalFormTach">
                 <button class="close-add"><ion-icon name="close-circle-outline"></ion-icon></button>
-                <form action="add" method="post" class="mb-4">
-                    <input type="hidden" name="itemId">
+                <form action="AddRessource" method="post" class="mb-4">
+
                     <div class="form-group">
-                        <label for="itemName">Nom du projet</label>
-                        <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                        <label for="itemName">Nom </label>
+                        <input type="text" class="form-control" id="itemName" name="nomRessource" placeholder="Entrer nom">
                     </div>
                     <div class="form-group">
-                        <label for="itemDateDebut">Date de début</label>
-                        <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                        <label for="itemType">Type</label>
+                        <input type="text" class="form-control" id="itemType"  name="typeRessource">
                     </div>
                     <div class="form-group">
-                        <label for="itemDateFin">Date de fin</label>
-                        <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                        <label for="quantiteRessource">Quantite</label>
+                        <input type="text" class="form-control"  id="quantiteRessource" name="quantiteRessource" >
                     </div>
+
                     <div class="form-group">
-                        <label for="itemBudget">Budget</label>
-                        <input type="number" class="form-control" id="itemBudget" name="itemBudget"  placeholder="Entrer budget">
-                    </div>
-                    <div class="form-group">
-                        <label for="itemDescription">Description</label>
-                        <textarea class="form-control" id="itemDescription" name="itemDescription" placeholder="Entrer description"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                        <label for="infoFournisseur">Fournisseur</label>
+                        <input type="text" class="form-control"  id="infoFournisseur" name="infoFournisseur" >
+
+                       <div class="form-group">
+                           <label for="img">Image</label>
+                           <input type="text" class="form-control" placeholder="img" id="img" name="img" >
+
+
+                       </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </section>
 
         <div class="detailsResource">
+
         <div class="detailsResource-wrapper">
-                    <div class="imgDetails"><img src="https://s7d2.scene7.com/is/image/Caterpillar/CM20220913-88893-53ba6" /></div>
+
+                    <div class="imgDetails"><img src="${ressource.getImg()}" /></div>
+
             <div class="detailsContent">
-                <h1>Pelles mécaniques</h1>
-                <h2>Engins de Terrassement </h2>
+                <h1>${ressource.getNomRessource()}</h1>
+                <h2>${ressource.getTypeRessource()}</h2>
                 <div>
-                    <p><em>Quantite </em> ---> <span> 40</span></p>
-                    <p><em>Fournisseur </em> ---> <span> Entreprise A</span></p>
+                    <p><em>Quantite </em> ---> <span> ${ressource.getQuantiteRoussource()}</span></p>
+                    <p><em>Fournisseur </em> ---> <span> ${ressource.getInfoFournisseur()}</span></p>
                 </div>
                 <div class="detailsRessourcesControls">
-                    <a class="removeDetails" ><ion-icon name="trash-outline"></ion-icon></a>
+                    <a href="DeleteRessource?id=${ressource.getIdRessource()}"><ion-icon name="trash-outline"></ion-icon></a>
                     <a class="updateDetails"><ion-icon name="create-outline"></ion-icon></a>
                 </div>
             </div>
             <div class="popupDetails">
-                    <button class="close"><ion-icon name="close-circle-outline"></ion-icon></button>
-                    <form action="add" method="post" class="mb-4">
-                        <input type="hidden" name="itemId">
+                    <button class="closeUpdate"><ion-icon name="close-circle-outline"></ion-icon></button>
+                    <form action="UpdateRessourceTache" method="post" class="mb-4">
                         <div class="form-group">
-                            <label for="itemName">Nom du projet</label>
-                            <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Entrer nom">
+                        <input type="text" name="idRessource" value="${ressource.getIdRessource()}">
                         </div>
                         <div class="form-group">
-                            <label for="itemDateDebut">Date de début</label>
-                            <input type="date" class="form-control" id="itemDateDebut" name="itemDateDebut">
+                            <label for="itemName">Nom </label>
+                            <input type="text" class="form-control" id="itemName" name="nomRessource" value="${ressource.getNomRessource()}" placeholder="Entrer nom">
                         </div>
                         <div class="form-group">
-                            <label for="itemDateFin">Date de fin</label>
-                            <input type="date" class="form-control" id="itemDateFin" name="itemDateFin" >
+                            <label for="itemType">Type</label>
+                            <input type="text" class="form-control" id="itemType" value="${ressource.getTypeRessource()}" name="typeRessource">
                         </div>
-                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                        <div class="form-group">
+                            <label for="quantiteRessource">Quantite</label>
+                            <input type="text" class="form-control" value="${ressource.getQuantiteRoussource()}" id="quantiteRessource" name="quantiteRessource" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="infoFournisseur">Fournisseur</label>
+                            <input type="text" class="form-control" value="${ressource.getInfoFournisseur()}" id="infoFournisseur" name="infoFournisseur" >
+
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" value="${ressource.getIdTache()}" id="idTache" name="idTache" >
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </form>
             </div>
         </div>
-            <div class="titre-cards">
-                <h1>Ressource materiel</h1>
-            </div>
 
-            <section class="main-cards">
-
-                <div class="card-wrapper">
-                    <c:forEach var="Ressources" items="${Ressources}">
-                        <div class="cardD">
-                            <div>
-                                <img class="card_disney" src="${Ressources.getImg()}"/>
-
-                                </a>
-                                <div class="comments1">
-                                    <i class="fa-regular fa-bookmark" ></i>
-                                </div>
-                            </div>
-                            <h1>${Ressources.getNomRessource()}</h1>
-
-
-
+            <c:forEach var="Ressources" items="${Ressources}">
+                <div class="container mt-4">
+                    <div class="cardd">
+                        <div class="card-header">
+                            <h2 class="card-title">Ressource N°: ${Ressources.getIdRessource()}</h2>
                         </div>
-                    </c:forEach>
+                        <div class="card-body">
+                            <h2>${Ressources.getNomRessource()}</h2>
+                            <h3>${Ressources.getTypeRessource()}</h3>
+                            <h4>${Ressources.getQuantiteRoussource()}</h4>
+                            <h4>${Ressources.getInfoFournisseur()}</h4>
+                            <h4>${Ressources.getIdTache()}</h4>
+                            <a href="UpdateRessourceTache?id=${Ressources.getIdRessource()}" class="btn btn-primary mr-2">Update</a>
+                            <a href="DeleteRessource?id=${Ressources.getIdRessource()}" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </c:forEach>
         </div>
         </div>
     </div>
@@ -202,9 +212,9 @@
     })
 
     document.querySelector(".updateDetails").addEventListener("click",()=>{
-        document.querySelector(".popupDetails").style.display = "block";
+        document.querySelector(".popupDetails").style.display = "flex";
     })
-    document.querySelector(".close").addEventListener("click",()=>{
+    document.querySelector(".closeUpdate").addEventListener("click",()=>{
         document.querySelector(".popupDetails").style.display = "none";
     })
     // Menu Toggle
